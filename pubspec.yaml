@@ -59,9 +59,70 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/absol.png
+    - assets/images/aegislash.png
+    - assets/images/alolan-ninetales.png
+    - assets/images/azumarill.png
+    - assets/images/blastoise.png
+    - assets/images/blaziken.png
+    - assets/images/blissey.png
+    - assets/images/buzzwole.png
+    - assets/images/chandelure.png
+    - assets/images/charizard.png
+    - assets/images/cinderace.png
+    - assets/images/clefable.png
+    - assets/images/comfey.png
+    - assets/images/cramorant.png
+    - assets/images/crustle.png
+    - assets/images/decidueye.png
+    - assets/images/default.png
+    - assets/images/delphox.png
+    - assets/images/dodrio.png
+    - assets/images/dragapult.png
+    - assets/images/dragonite.png
+    - assets/images/duraludon.png
+    - assets/images/eldegoss.png
+    - assets/images/espeon.png
+    - assets/images/garchomp.png
+    - assets/images/gardevoir.png
+    - assets/images/gengar.png
+    - assets/images/glaceon.png
+    - assets/images/goodra.png
+    - assets/images/greedent.png
+    - assets/images/greninja.png
+    - assets/images/gyarados.png
+    - assets/images/hoopa.png
+    - assets/images/inteleon.png
+    - assets/images/lapras.png
+    - assets/images/leafeon.png
+    - assets/images/lucario.png
+    - assets/images/machamp.png
+    - assets/images/mamoswine.png
+    - assets/images/meowscarada.png
+    - assets/images/metagross.png
+    - assets/images/mew.png
+    - assets/images/mewtwoX.png
+    - assets/images/mewtwoY.png
+    - assets/images/mimikyu.png
+    - assets/images/mr-mime.png
+    - assets/images/pikachu.png
+    - assets/images/sableye.png
+    - assets/images/scizor.png
+    - assets/images/slowbro.png
+    - assets/images/snorlax.png
+    - assets/images/sylveon.png
+    - assets/images/talonflame.png
+    - assets/images/trevenant.png
+    - assets/images/tsareena.png
+    - assets/images/tyranitar.png
+    - assets/images/umbreon.png
+    - assets/images/urshifu.png
+    - assets/images/venusaur.png
+    - assets/images/wigglytuff.png
+    - assets/images/zacian.png
+    - assets/images/zeraora.png
+    - assets/images/zoroark.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

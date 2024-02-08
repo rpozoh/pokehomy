@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
 
-import 'package:pokehomy/center_text.dart';
-
-const beginAlignment = Alignment.topLeft;
-const endAlignment = Alignment.bottomRight;
+import 'package:pokehomy/randomizer.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.beginAlignment, this.endAlignment, this.colors, {super.key});
+
+  final Alignment beginAlignment;
+  final Alignment endAlignment;
+  final List<Color> colors;
 
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.black,
-            Colors.red,
-          ],
+          colors: colors,
           begin: beginAlignment,
           end: endAlignment,
         ),
       ),
       child: const Center(
-        child: CenterText('Ejemplo 2', Colors.green, 28),
+        child: Randomizer(),
       ),
     );
   }
