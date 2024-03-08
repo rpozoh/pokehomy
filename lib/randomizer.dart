@@ -13,7 +13,7 @@ class Randomizer extends StatefulWidget {
 }
 
 class _RandomizerState extends State<Randomizer> {
-
+  final randomizer = Random();
   var team1Poke1 = 'default';
   var team1Poke2 = 'default';
   var team1Poke3 = 'default';
@@ -95,14 +95,24 @@ class _RandomizerState extends State<Randomizer> {
     }
 
   void random() {
-    var pokemonSeleccionado = 0;
+    int pokemonSeleccionado = 1;
     List<String> equipos = [];
     resetList();
-    for(var team = 1; team <= 2; team++){
-      for(var poke = 1; poke <= 5; poke++) {
-        pokemonSeleccionado = Random().nextInt(pokemon.length);
-        equipos.add(pokemon[pokemonSeleccionado]);
-        pokemon.removeAt(pokemonSeleccionado);
+    for(var team = 0; team < 2; team++){
+      for(var poke = 0; poke < 5; poke++) {
+        pokemonSeleccionado = randomizer.nextInt(pokemon.length);
+        if(pokemon[pokemonSeleccionado] == "mewtwoX") {
+          equipos.add(pokemon[pokemonSeleccionado]);
+          pokemon.removeAt(pokemonSeleccionado + 1);
+          pokemon.removeAt(pokemonSeleccionado);
+        } else if(pokemon[pokemonSeleccionado] == "mewtwoY") {
+          equipos.add(pokemon[pokemonSeleccionado]);
+          pokemon.removeAt(pokemonSeleccionado);
+          pokemon.removeAt(pokemonSeleccionado - 1);
+        } else {
+          equipos.add(pokemon[pokemonSeleccionado]);
+          pokemon.removeAt(pokemonSeleccionado);
+        }
       }
       resetList();
     }
@@ -137,14 +147,18 @@ class _RandomizerState extends State<Randomizer> {
             Image.asset('assets/images/$team1Poke5.png'),
           ],
         ),
-        const Row(
+        Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CenterText('VS', Colors.yellow, 28),
-            CenterText('VS', Colors.yellow, 28),
-            CenterText('VS', Colors.yellow, 28),
-            CenterText('VS', Colors.yellow, 28),
-            CenterText('VS', Colors.yellow, 28),
+            CenterText(team1Poke1, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team1Poke2, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team1Poke3, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team1Poke4, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team1Poke5, Colors.yellow, 28),
           ],
         ),
         const CenterText('VS', Colors.yellow, 28),
@@ -156,6 +170,20 @@ class _RandomizerState extends State<Randomizer> {
             Image.asset('assets/images/$team2Poke3.png'),
             Image.asset('assets/images/$team2Poke4.png'),
             Image.asset('assets/images/$team2Poke5.png'),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CenterText(team2Poke1, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team2Poke2, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team2Poke3, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team2Poke4, Colors.yellow, 28),
+            const SizedBox(width: 120),
+            CenterText(team2Poke5, Colors.yellow, 28),
           ],
         ),
         TextButton(
