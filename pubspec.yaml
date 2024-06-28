@@ -68,6 +68,7 @@ flutter:
     - assets/images/blaziken.png
     - assets/images/blissey.png
     - assets/images/buzzwole.png
+    - assets/images/ceruledge.png
     - assets/images/chandelure.png
     - assets/images/charizard.png
     - assets/images/cinderace.png
@@ -84,6 +85,7 @@ flutter:
     - assets/images/duraludon.png
     - assets/images/eldegoss.png
     - assets/images/espeon.png
+    - assets/images/falinks.png
     - assets/images/garchomp.png
     - assets/images/gardevoir.png
     - assets/images/gengar.png
@@ -105,6 +107,7 @@ flutter:
     - assets/images/mewtwoX.png
     - assets/images/mewtwoY.png
     - assets/images/mimikyu.png
+    - assets/images/miraidon.png    
     - assets/images/mr-mime.png
     - assets/images/pikachu.png
     - assets/images/sableye.png

@@ -37,6 +37,7 @@ class _RandomizerState extends State<Randomizer> {
         "blaziken",
         "blissey",
         "buzzwole",
+        "ceruledge",
         "chandelure",
         "charizard",
         "cinderace",
@@ -52,6 +53,7 @@ class _RandomizerState extends State<Randomizer> {
         "duraludon",
         "eldegoss",
         "espeon",
+        "falinks",
         "garchomp",
         "gardevoir",
         "gengar",
@@ -73,6 +75,7 @@ class _RandomizerState extends State<Randomizer> {
         "mewtwoX",
         "mewtwoY",
         "mimikyu",
+        "miraidon",
         "mr-mime",
         "pikachu",
         "sableye",
@@ -186,9 +189,9 @@ class _RandomizerState extends State<Randomizer> {
             CenterText(team2Poke5, Colors.yellow, 28),
           ],
         ),
-        TextButton(
+        OutlinedButton(
           onPressed: random,
-          child: const Text('Generar Equipos')
+          child: const Text('Generar Equipos'),
         ),
       ],
     );
