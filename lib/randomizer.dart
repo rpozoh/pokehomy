@@ -71,7 +71,7 @@ class _RandomizerState extends State<Randomizer> {
       {"name":"Greedent", "rol":"Defensivo", "type":"normal", "image":"assets/images/greedent.png"},
       {"name":"Greninja", "rol":"Ofensivo", "type":"normal", "image":"assets/images/greninja.png"},
       {"name":"Gyarados", "rol":"Equilibrado", "type":"normal", "image":"assets/images/gyarados.png"},
-      {"name":"Ho-Oh", "rol":"Defensivo", "type":"ex", "image":"assets/images/default.png"},
+      {"name":"Ho-Oh", "rol":"Defensivo", "type":"ex", "image":"assets/images/ho-oh.png"},
       {"name":"Hoopa", "rol":"Auxiliar", "type":"normal", "image":"assets/images/hoopa.png"},
       {"name":"Inteleon", "rol":"Ofensivo", "type":"normal", "image":"assets/images/inteleon.png"},
       {"name":"Lapras", "rol":"Defensivo", "type":"normal", "image":"assets/images/lapras.png"},
