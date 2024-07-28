@@ -36,6 +36,9 @@ class _RandomizerState extends State<Randomizer> {
   var selectRol = "Todos";
   var allRol = true;
 
+  Color rolColor = Colors.lime;
+  Color exColor = Colors.red;
+
   void resetList() {
     pokemon = [
       {"name":"Absol", "rol":"Agil", "type":"normal", "image":"assets/images/absol.png"},
@@ -216,10 +219,12 @@ class _RandomizerState extends State<Randomizer> {
       if(exs) {
         pokemon = pokemon.where((ex) => ex['type'] == 'normal').toList();
         exTag = "Sin Ex";
+        exColor = Colors.green;
         exs = false;
       } else {
         resetList();
         exTag = "Con Ex";
+        exColor = Colors.red;
         exs = true;
       }
     });
@@ -233,10 +238,12 @@ class _RandomizerState extends State<Randomizer> {
         rolSeleccionado = randomizer.nextInt(rols.length);
         selectRol = rols[rolSeleccionado];
         rolTag = 'Rol: ${rols[rolSeleccionado]}';
+        rolColor = setColor(rols[rolSeleccionado]);
         allRol = false;
       } else {
         selectRol = "Todos";
         rolTag = 'Rol: Todos';
+        rolColor = Colors.lime;
         allRol = true;
       }
     });
@@ -305,18 +312,19 @@ class _RandomizerState extends State<Randomizer> {
           children: <Widget>[
             OutlinedButton(
               onPressed: setEx,
-              style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
+              style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3)),
               child: Text(exTag,
-              style: const TextStyle(color: Colors.yellow)),
+              style: const TextStyle(color: Colors.black)),
             ),
             OutlinedButton(
               onPressed: setRol,
-              style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
+              style: OutlinedButton.styleFrom(backgroundColor: rolColor, side: const BorderSide(width: 3)),
               child: Text(rolTag,
-              style: const TextStyle(color: Colors.yellow)),
+              style: const TextStyle(color: Colors.black)),
             ),
           ],
         ),
+
         // Primera fila de imágenes
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -337,27 +345,27 @@ class _RandomizerState extends State<Randomizer> {
           children: <Widget>[
             OutlinedButton(
               onPressed: random,
-              style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
+              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
               child: const Text('Generar Equipos',
-              style: TextStyle(color: Colors.yellow)),
+              style: TextStyle(color: Colors.black)),
             ),
             OutlinedButton(
               onPressed: randomNoRepeat,
-              style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
+              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
               child: const Text('Sin repetir',
-              style: TextStyle(color: Colors.yellow)),
+              style: TextStyle(color: Colors.black)),
             ),
             OutlinedButton(
               onPressed: fullteam,
-              style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
+              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
               child: const Text('Balanceado',
-              style: TextStyle(color: Colors.yellow)),
+              style: TextStyle(color: Colors.black)),
             ),
             OutlinedButton(
               onPressed: distinctRol,
-              style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
+              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
               child: const Text('RolA vs RolB',
-              style: TextStyle(color: Colors.yellow)),
+              style: TextStyle(color: Colors.black)),
             ),
           ],
         ),
@@ -371,6 +379,7 @@ class _RandomizerState extends State<Randomizer> {
         Container(
           width: 300,
           height: 300,
+          margin: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
             color: teamData['color'],
             borderRadius: BorderRadius.circular(10),
