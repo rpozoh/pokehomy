@@ -180,6 +180,36 @@ class _RandomizerState extends State<Randomizer> {
     });
   }
 
+  void distinctRol() {
+    setState(() {
+      int pokemonSeleccionado = 1;
+      int rolSeleccionado = 1;
+      List<Map<String, dynamic>> rolTeam = [];
+      setRolList();
+      setPoke();
+      for(var poke = 0; poke < 10; poke++) {
+        if(poke == 0 || poke == 5) {
+          setPoke();
+          rolSeleccionado = randomizer.nextInt(rols.length);
+        }
+        rolTeam = pokemon.where((pokes) => pokes['rol'] == rols[rolSeleccionado]).toList();
+        pokemonSeleccionado = randomizer.nextInt(rolTeam.length);
+        if(rolTeam[pokemonSeleccionado]['name'] == "MewtwoX") {
+          setTeamPoke(poke, rolTeam[pokemonSeleccionado]);
+          pokemon.removeWhere((element) => element['name'] == rolTeam[pokemonSeleccionado]['name']);
+          pokemon.removeWhere((element) => element['name'] == 'MewtwoY');
+        } else if(rolTeam[pokemonSeleccionado]['name'] == "MewtwoY") {
+          setTeamPoke(poke, rolTeam[pokemonSeleccionado]);
+          pokemon.removeWhere((element) => element['name'] == rolTeam[pokemonSeleccionado]['name']);
+          pokemon.removeWhere((element) => element['name'] == 'MewtwoX');
+        } else {
+          setTeamPoke(poke, rolTeam[pokemonSeleccionado]);
+          pokemon.removeWhere((element) => element['name'] == rolTeam[pokemonSeleccionado]['name']);
+        }
+      }
+    });
+  }
+
   void setEx() {
     setState(() {
       resetList();
@@ -321,6 +351,12 @@ class _RandomizerState extends State<Randomizer> {
               onPressed: fullteam,
               style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
               child: const Text('Balanceado',
+              style: TextStyle(color: Colors.yellow)),
+            ),
+            OutlinedButton(
+              onPressed: distinctRol,
+              style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue)),
+              child: const Text('RolA vs RolB',
               style: TextStyle(color: Colors.yellow)),
             ),
           ],
