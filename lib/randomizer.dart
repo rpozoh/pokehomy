@@ -360,7 +360,7 @@ class _RandomizerState extends State<Randomizer> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget> [
             Tooltip(
-              message: 'Genera los equipos con culquier Pokémon disponible',
+              message: 'Genera los equipos con cualquier Pokémon disponible',
               child: OutlinedButton(
                 onPressed: random,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
@@ -378,7 +378,7 @@ class _RandomizerState extends State<Randomizer> {
               ),
             ),
             Tooltip(
-              message: 'Genera los equipos con un Pokémon de cada rol',
+              message: 'Genera los equipos con un Pokémon de cada rol en cada equipo',
               child: OutlinedButton (
                 onPressed: fullteam,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
