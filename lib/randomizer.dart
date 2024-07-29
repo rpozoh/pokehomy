@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:math';
+import 'package:url_launcher/url_launcher.dart';
 
 class Randomizer extends StatefulWidget {
   const Randomizer({super.key});
@@ -38,6 +40,8 @@ class _RandomizerState extends State<Randomizer> {
 
   Color rolColor = Colors.lime;
   Color exColor = Colors.red;
+
+  final Uri _url = Uri.parse('https://www.twitch.tv/rphisto');
 
   void resetList() {
     pokemon = [
@@ -302,6 +306,12 @@ class _RandomizerState extends State<Randomizer> {
     return color;
   }
 
+  Future<void> goTwitch() async {
+    if (!await launchUrl(_url)){
+      throw Exception('No es posible abrir el enlace $_url');
+    }
+  }
+
   @override
   Widget build(context) {
     return Column(
@@ -369,6 +379,18 @@ class _RandomizerState extends State<Randomizer> {
             ),
           ],
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            IconButton(
+              onPressed: goTwitch,
+              icon: const FaIcon(FontAwesomeIcons.twitch),
+              iconSize: 20,
+              style: IconButton.styleFrom(fixedSize: const Size(60, 34),backgroundColor: Colors.purpleAccent, side: const BorderSide(width: 1)),
+              tooltip: 'Rphisto en Twitch',
+            ),
+          ],
+        )
       ],
     );
   }
@@ -379,7 +401,7 @@ class _RandomizerState extends State<Randomizer> {
         Container(
           width: 300,
           height: 300,
-          margin: const EdgeInsets.symmetric(vertical: 16),
+          margin: const EdgeInsets.symmetric(vertical: 4),
           decoration: BoxDecoration(
             color: teamData['color'],
             borderRadius: BorderRadius.circular(10),
@@ -389,7 +411,7 @@ class _RandomizerState extends State<Randomizer> {
             fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 12),
         Text(
           '${teamData['name']}',
           style: const TextStyle(fontSize: 30, color: Colors.yellow),

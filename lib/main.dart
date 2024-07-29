@@ -8,7 +8,7 @@ void main() {
       home: Scaffold(
         body: GradientContainer(Alignment.topLeft, Alignment.bottomRight, [Colors.black, Colors.red]),
       ),
-      title: 'Randomizer by Rphisto v5.0.2',
+      title: 'Randomizer by Rphisto v5.1.0',
     ),
   );
 }
