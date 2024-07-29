@@ -307,7 +307,7 @@ class _RandomizerState extends State<Randomizer> {
   }
 
   Future<void> goTwitch() async {
-    if (!await launchUrl(_url)){
+    if (!await launchUrl(_url)) {
       throw Exception('No es posible abrir el enlace $_url');
     }
   }
@@ -316,21 +316,27 @@ class _RandomizerState extends State<Randomizer> {
   Widget build(context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: <Widget> [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            OutlinedButton(
-              onPressed: setEx,
-              style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3)),
-              child: Text(exTag,
-              style: const TextStyle(color: Colors.black)),
+          children: <Widget> [
+            Tooltip (
+              message: 'Habilita/Deshabilita los Pokémon con marca EX',
+              child: OutlinedButton (
+                onPressed: setEx,
+                style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3)),
+                child: Text(exTag,
+                style: const TextStyle(color: Colors.black)),
+              ),
             ),
-            OutlinedButton(
-              onPressed: setRol,
-              style: OutlinedButton.styleFrom(backgroundColor: rolColor, side: const BorderSide(width: 3)),
-              child: Text(rolTag,
-              style: const TextStyle(color: Colors.black)),
+            Tooltip (
+              message: 'Define el rol de los Pokémon que usaran ambos equipos',
+              child: OutlinedButton (
+                onPressed: setRol,
+                style: OutlinedButton.styleFrom(backgroundColor: rolColor, side: const BorderSide(width: 3)),
+                child: Text(rolTag,
+                style: const TextStyle(color: Colors.black)),
+              ),
             ),
           ],
         ),
@@ -352,36 +358,48 @@ class _RandomizerState extends State<Randomizer> {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            OutlinedButton(
-              onPressed: random,
-              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
-              child: const Text('Generar Equipos',
-              style: TextStyle(color: Colors.black)),
+          children: <Widget> [
+            Tooltip(
+              message: 'Genera los equipos con culquier Pokémon disponible',
+              child: OutlinedButton(
+                onPressed: random,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
+                child: const Text('Generar Equipos',
+                style: TextStyle(color: Colors.black)),
+              ),
             ),
-            OutlinedButton(
-              onPressed: randomNoRepeat,
-              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
-              child: const Text('Sin repetir',
-              style: TextStyle(color: Colors.black)),
+            Tooltip(
+              message: 'Genera los equipos sin repetir Pokémon de un equipo a otro',
+              child: OutlinedButton (
+                onPressed: randomNoRepeat,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
+                child: const Text('Sin repetir',
+                style: TextStyle(color: Colors.black)),
+              ),
             ),
-            OutlinedButton(
-              onPressed: fullteam,
-              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
-              child: const Text('Balanceado',
-              style: TextStyle(color: Colors.black)),
+            Tooltip(
+              message: 'Genera los equipos con un Pokémon de cada rol',
+              child: OutlinedButton (
+                onPressed: fullteam,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
+                child: const Text('Balanceado',
+                style: TextStyle(color: Colors.black)),
+              ),
             ),
-            OutlinedButton(
-              onPressed: distinctRol,
-              style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
-              child: const Text('RolA vs RolB',
-              style: TextStyle(color: Colors.black)),
+            Tooltip(
+              message: 'Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro',
+              child: OutlinedButton (
+                onPressed: distinctRol,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
+                child: const Text('RolA vs RolB',
+                style: TextStyle(color: Colors.black)),
+              ),
             ),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
+          children: <Widget> [
             IconButton(
               onPressed: goTwitch,
               icon: const FaIcon(FontAwesomeIcons.twitch),
@@ -396,17 +414,17 @@ class _RandomizerState extends State<Randomizer> {
   }
 
   Widget _buildImagenConTexto(Map<String, dynamic> teamData) {
-    return Column(
-      children: <Widget>[
+    return Column (
+      children: <Widget> [
         Container(
           width: 300,
           height: 300,
           margin: const EdgeInsets.symmetric(vertical: 4),
-          decoration: BoxDecoration(
+          decoration: BoxDecoration (
             color: teamData['color'],
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Image.asset(
+          child: Image.asset (
             teamData['image'],
             fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
           ),
