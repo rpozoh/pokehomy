@@ -6,9 +6,9 @@ void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: GradientContainer(Alignment.topLeft, Alignment.bottomRight, [Colors.black, Colors.red]),
+        body: GradientContainer(Alignment.topCenter, Alignment.bottomCenter, [Color.fromARGB(255, 43, 1, 116), Color.fromARGB(255, 247, 148, 1)]),
       ),
-      title: 'Randomizer by Rphisto v5.2.1',
+      title: 'Randomizer by Rphisto v5.2.2',
     ),
   );
 }

@@ -36755,7 +36755,7 @@ KE(a){var s,r=this,q=null
 r.a.toString
 s=r.gOC()
 r.a.toString
-return new A.rX(q,q,q,new A.Xq(),q,q,q,q,q,B.Ep,B.Cw,q,q,q,B.Aj,r.gOK(),"Randomizer by Rphisto v5.2.0",q,B.GY,B.aE,q,s,q,q,B.iI,!1,!1,!1,!1,r.gOp(),!0,q,q,q,new A.jK(r,t.By))},
+return new A.rX(q,q,q,new A.Xq(),q,q,q,q,q,B.Ep,B.Cw,q,q,q,B.Aj,r.gOK(),"Randomizer by Rphisto v5.2.1",q,B.GY,B.aE,q,s,q,q,B.iI,!1,!1,!1,!1,r.gOp(),!0,q,q,q,new A.jK(r,t.By))},
 T(a){var s,r=null,q=A.xA(!1,!1,this.KE(a),r,r,r,r,!0,r,r,new A.Xr(),r,r,r)
 this.a.toString
 s=this.d
@@ -54253,7 +54253,7 @@ p=A.a0(q).h("a5<1,n>")
 p=A.r2(A.a_(new A.a5(q,new A.Yb(o),p),!0,p.h("aL.E")),B.cn,B.b6)
 m=B.b.b2(m,5,10)
 q=A.a0(m).h("a5<1,n>")
-return A.a4e(A.a([s,p,B.FL,A.r2(A.a_(new A.a5(m,new A.Yc(o),q),!0,q.h("aL.E")),B.cn,B.b6),A.r2(A.a([A.mJ(A.qd(B.JR,o.gWT(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera los equipos con culquier Pok\xe9mon disponible"),A.mJ(A.qd(B.JS,o.gWV(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera los equipos sin repetir Pok\xe9mon de un equipo a otro"),A.mJ(A.qd(B.JT,o.gTY(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera los equipos con un Pok\xe9mon de cada rol"),A.mJ(A.qd(B.JU,o.gTd(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro")],r),B.cn,B.b6),A.r2(A.a([new A.y0(20,B.yl,o.gGv(),"Rphisto en Twitch",A.a1t(n,B.CB,n,n,n,n,B.FH,n,n,n,n,n,n,n,n,B.ut,n),n)],r),B.cn,B.b6)],r),B.Cd)},
+return A.a4e(A.a([s,p,B.FL,A.r2(A.a_(new A.a5(m,new A.Yc(o),q),!0,q.h("aL.E")),B.cn,B.b6),A.r2(A.a([A.mJ(A.qd(B.JR,o.gWT(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera los equipos con cualquier Pok\xe9mon disponible"),A.mJ(A.qd(B.JS,o.gWV(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera los equipos sin repetir Pok\xe9mon de un equipo a otro"),A.mJ(A.qd(B.JT,o.gTY(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera los equipos con un Pok\xe9mon de cada rol en cada equipo"),A.mJ(A.qd(B.JU,o.gTd(),A.qf(n,n,B.aE,n,n,n,n,n,n,n,n,n,n,n,n,B.bf,n,n,n,n)),"Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro")],r),B.cn,B.b6),A.r2(A.a([new A.y0(20,B.yl,o.gGv(),"Rphisto en Twitch",A.a1t(n,B.CB,n,n,n,n,B.FH,n,n,n,n,n,n,n,n,B.ut,n),n)],r),B.cn,B.b6)],r),B.Cd)},
 yt(a){var s=null,r=a.k(0,"color"),q=A.a0S(10),p=a.k(0,"image")
 return A.a4e(A.a([A.JZ(s,new A.pg(A.afo(s,s,new A.nZ(p,s,s)),B.uB,s),s,new A.d6(r,s,s,q,s,s,B.aJ),300,B.yc,s,300),B.FK,A.a2f(A.f(a.k(0,"name")),B.Jl)],t.eE),B.nL)}}
 A.Ys.prototype={
