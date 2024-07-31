@@ -371,8 +371,8 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Genera los equipos sin repetir Pokémon de un equipo a otro',
               child: OutlinedButton (
-                onPressed: randomNoRepeat,
-                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
+                onPressed: (selectRol == 'Auxiliar' || selectRol == 'Agil') ? null : randomNoRepeat,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Sin repetir',
                 style: TextStyle(color: Colors.black)),
               ),
@@ -380,8 +380,8 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Genera los equipos con un Pokémon de cada rol en cada equipo',
               child: OutlinedButton (
-                onPressed: fullteam,
-                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
+                onPressed: allRol ? fullteam : null,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Balanceado',
                 style: TextStyle(color: Colors.black)),
               ),
@@ -389,8 +389,8 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro',
               child: OutlinedButton (
-                onPressed: distinctRol,
-                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
+                onPressed: allRol ? distinctRol : null,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('RolA vs RolB',
                 style: TextStyle(color: Colors.black)),
               ),
