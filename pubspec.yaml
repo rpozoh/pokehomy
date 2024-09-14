@@ -65,6 +65,7 @@ flutter:
     - assets/images/absol.png
     - assets/images/aegislash.png
     - assets/images/alolan-ninetales.png
+    - assets/images/armarouge.png
     - assets/images/azumarill.png
     - assets/images/blastoise.png
     - assets/images/blaziken.png
@@ -78,6 +79,7 @@ flutter:
     - assets/images/comfey.png
     - assets/images/cramorant.png
     - assets/images/crustle.png
+    - assets/images/darkrai.png
     - assets/images/decidueye.png
     - assets/images/default.png
     - assets/images/delphox.png
@@ -113,6 +115,7 @@ flutter:
     - assets/images/miraidon.png    
     - assets/images/mr-mime.png
     - assets/images/pikachu.png
+    - assets/images/psyduck.png
     - assets/images/sableye.png
     - assets/images/scizor.png
     - assets/images/slowbro.png

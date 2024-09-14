@@ -48,6 +48,7 @@ class _RandomizerState extends State<Randomizer> {
       {"name":"Absol", "rol":"Agil", "type":"normal", "image":"assets/images/absol.png"},
       {"name":"Aegislash", "rol":"Equilibrado", "type":"normal", "image":"assets/images/aegislash.png"},
       {"name":"Alolan-ninetales", "rol":"Ofensivo", "type":"normal", "image":"assets/images/alolan-ninetales.png"},
+      {"name":"Armarouge", "rol":"Ofensivo", "type":"normal", "image":"assets/images/armarouge.png"},
       {"name":"Azumarill", "rol":"Equilibrado", "type":"normal", "image":"assets/images/azumarill.png"},
       {"name":"Blastoise", "rol":"Defensivo", "type":"normal", "image":"assets/images/blastoise.png"},
       {"name":"Blaziken", "rol":"Equilibrado", "type":"normal", "image":"assets/images/blaziken.png"},
