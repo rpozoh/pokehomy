@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:math';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:io';
 
 class Randomizer extends StatefulWidget {
   const Randomizer({super.key});
@@ -62,6 +63,7 @@ class _RandomizerState extends State<Randomizer> {
       {"name":"Comfey", "rol":"Auxiliar", "type":"normal", "image":"assets/images/comfey.png"},
       {"name":"Cramorant", "rol":"Ofensivo", "type":"normal", "image":"assets/images/cramorant.png"},
       {"name":"Crustle", "rol":"Defensivo", "type":"normal", "image":"assets/images/crustle.png"},
+      {"name":"Darkrai", "rol":"Agil", "type":"normal", "image":"assets/images/darkrai.png"},
       {"name":"Decidueye", "rol":"Ofensivo", "type":"normal", "image":"assets/images/decidueye.png"},
       {"name":"Delphox", "rol":"Ofensivo", "type":"normal", "image":"assets/images/delphox.png"},
       {"name":"Dodrio", "rol":"Agil", "type":"normal", "image":"assets/images/dodrio.png"},

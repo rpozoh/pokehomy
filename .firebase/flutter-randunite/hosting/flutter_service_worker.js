@@ -9,7 +9,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182
 "assets/assets/images/absol.png": "f83221812bfcf409615e87fe1860e6d0",
 "assets/assets/images/aegislash.png": "3167ecdefb6f7ce41ef2cdddf4258545",
 "assets/assets/images/alolan-ninetales.png": "e62f1393c6ec857de0680f33fb6181e2",
-"assets/assets/images/armarouge.png": "b7b8ded56f5744bace986a5ca085f851",
+"assets/assets/images/armarouge.png": "1bcab2f7132f540d7cd32cd6254b20eb",
 "assets/assets/images/azumarill.png": "e2d898c5bf0d7c08cd77dcf97c5eb10d",
 "assets/assets/images/blastoise.png": "0d8d45984c58b3ceaecdd471ac1b10d1",
 "assets/assets/images/blaziken.png": "0ae12f4dd94603a144feed05fc67174d",
@@ -23,7 +23,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182
 "assets/assets/images/comfey.png": "8f777598a9b0d46bcd0b187e6d95cb7a",
 "assets/assets/images/cramorant.png": "486955b58af274d60c04079159fd534e",
 "assets/assets/images/crustle.png": "84f04da4a0f8005321f8bea5c28beb40",
-"assets/assets/images/darkrai.png": "3c531a8dd178aa71057183ac8c0dee13",
+"assets/assets/images/darkrai.png": "d40c89ac55ea9ffc2c75f5a416e215d6",
 "assets/assets/images/decidueye.png": "e997b6953fee4740b09adbab8cb0c0ce",
 "assets/assets/images/default.png": "3c531a8dd178aa71057183ac8c0dee13",
 "assets/assets/images/delphox.png": "c512374bcc034e4bcf36caa27cb54b52",
@@ -59,7 +59,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182
 "assets/assets/images/miraidon.png": "f9ff3b46505231ed75b146f4604f2cec",
 "assets/assets/images/mr-mime.png": "0bd54b9fd2559b3c2c887a073e976493",
 "assets/assets/images/pikachu.png": "b95badb09a4595673c4712041e30ad03",
-"assets/assets/images/psyduck.png": "3c531a8dd178aa71057183ac8c0dee13",
+"assets/assets/images/psyduck.png": "7146ce8a6a916650e3a8b0e8d0e4b9c6",
 "assets/assets/images/sableye.png": "d96144a71d63ebf7b78b47619b6888e8",
 "assets/assets/images/scizor.png": "a36bbf9c967a45030dd7ec3c4576549c",
 "assets/assets/images/slowbro.png": "f64864f11fba557167f8c9bb3e965acb",
@@ -97,11 +97,11 @@ const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182
 "icons/Icon-512.png": "325db30d3c7972adc21421357a41c7c5",
 "icons/Icon-maskable-192.png": "8463611bf4d29fe7bfb183f6508b05f4",
 "icons/Icon-maskable-512.png": "325db30d3c7972adc21421357a41c7c5",
-"index.html": "92184f10d6236878ccb7067b40c8e0fa",
-"/": "92184f10d6236878ccb7067b40c8e0fa",
+"index.html": "57c672c55453bdd7b3bd526630189109",
+"/": "57c672c55453bdd7b3bd526630189109",
 "main.dart.js": "d5c93fb55f81d6e1286f8c5e401fa74a",
 "manifest.json": "a2603969a23eaf8e0087acb3f6b5ef3f",
-"version.json": "8a76d2595e167a9a0a28e1cef09feaf7"};
+"version.json": "5926bc4ecc6848187fa072e8d205d414"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
