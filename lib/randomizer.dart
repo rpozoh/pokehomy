@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:math';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:io';
 
 class Randomizer extends StatefulWidget {
   const Randomizer({super.key});
@@ -39,6 +38,11 @@ class _RandomizerState extends State<Randomizer> {
   var selectRol = "Todos";
   var allRol = true;
 
+  var teamPurpleTag = "";
+  var teamOrangeTag = "";
+
+  var vsTag = "VS";
+
   Color rolColor = Colors.lime;
   Color exColor = Colors.red;
 
@@ -46,74 +50,74 @@ class _RandomizerState extends State<Randomizer> {
 
   void resetList() {
     pokemon = [
-      {"name":"Absol", "rol":"Agil", "type":"normal", "image":"assets/images/absol.png"},
-      {"name":"Aegislash", "rol":"Equilibrado", "type":"normal", "image":"assets/images/aegislash.png"},
-      {"name":"Alolan-ninetales", "rol":"Ofensivo", "type":"normal", "image":"assets/images/alolan-ninetales.png"},
-      {"name":"Armarouge", "rol":"Ofensivo", "type":"normal", "image":"assets/images/armarouge.png"},
-      {"name":"Azumarill", "rol":"Equilibrado", "type":"normal", "image":"assets/images/azumarill.png"},
-      {"name":"Blastoise", "rol":"Defensivo", "type":"normal", "image":"assets/images/blastoise.png"},
-      {"name":"Blaziken", "rol":"Equilibrado", "type":"normal", "image":"assets/images/blaziken.png"},
-      {"name":"Blissey", "rol":"Auxiliar", "type":"normal", "image":"assets/images/blissey.png"},
-      {"name":"Buzzwole", "rol":"Equilibrado", "type":"normal", "image":"assets/images/buzzwole.png"},
-      {"name":"Ceruledge", "rol":"Equilibrado", "type":"normal", "image":"assets/images/ceruledge.png"},
-      {"name":"Chandelure", "rol":"Ofensivo", "type":"normal", "image":"assets/images/chandelure.png"},
-      {"name":"Charizard", "rol":"Equilibrado", "type":"normal", "image":"assets/images/charizard.png"},
-      {"name":"Cinderace", "rol":"Ofensivo", "type":"normal", "image":"assets/images/cinderace.png"},
-      {"name":"Clefable", "rol":"Auxiliar", "type":"normal", "image":"assets/images/clefable.png"},
-      {"name":"Comfey", "rol":"Auxiliar", "type":"normal", "image":"assets/images/comfey.png"},
-      {"name":"Cramorant", "rol":"Ofensivo", "type":"normal", "image":"assets/images/cramorant.png"},
-      {"name":"Crustle", "rol":"Defensivo", "type":"normal", "image":"assets/images/crustle.png"},
-      {"name":"Darkrai", "rol":"Agil", "type":"normal", "image":"assets/images/darkrai.png"},
-      {"name":"Decidueye", "rol":"Ofensivo", "type":"normal", "image":"assets/images/decidueye.png"},
-      {"name":"Delphox", "rol":"Ofensivo", "type":"normal", "image":"assets/images/delphox.png"},
-      {"name":"Dodrio", "rol":"Agil", "type":"normal", "image":"assets/images/dodrio.png"},
-      {"name":"Dragapult", "rol":"Ofensivo", "type":"normal", "image":"assets/images/dragapult.png"},
-      {"name":"Dragonite", "rol":"Equilibrado", "type":"normal", "image":"assets/images/dragonite.png"},
-      {"name":"Duraludon", "rol":"Ofensivo", "type":"normal", "image":"assets/images/duraludon.png"},
-      {"name":"Eldegoss", "rol":"Auxiliar", "type":"normal", "image":"assets/images/eldegoss.png"},
-      {"name":"Espeon", "rol":"Ofensivo", "type":"normal", "image":"assets/images/espeon.png"},
-      {"name":"Falinks", "rol":"Equilibrado", "type":"normal", "image":"assets/images/falinks.png"},
-      {"name":"Garchomp", "rol":"Equilibrado", "type":"normal", "image":"assets/images/garchomp.png"},
-      {"name":"Gardevoir", "rol":"Ofensivo", "type":"normal", "image":"assets/images/gardevoir.png"},
-      {"name":"Gengar", "rol":"Agil", "type":"normal", "image":"assets/images/gengar.png"},
-      {"name":"Glaceon", "rol":"Ofensivo", "type":"normal", "image":"assets/images/glaceon.png"},
-      {"name":"Goodra", "rol":"Defensivo", "type":"normal", "image":"assets/images/goodra.png"},
-      {"name":"Greedent", "rol":"Defensivo", "type":"normal", "image":"assets/images/greedent.png"},
-      {"name":"Greninja", "rol":"Ofensivo", "type":"normal", "image":"assets/images/greninja.png"},
-      {"name":"Gyarados", "rol":"Equilibrado", "type":"normal", "image":"assets/images/gyarados.png"},
-      {"name":"Ho-Oh", "rol":"Defensivo", "type":"ex", "image":"assets/images/ho-oh.png"},
-      {"name":"Hoopa", "rol":"Auxiliar", "type":"normal", "image":"assets/images/hoopa.png"},
-      {"name":"Inteleon", "rol":"Ofensivo", "type":"normal", "image":"assets/images/inteleon.png"},
-      {"name":"Lapras", "rol":"Defensivo", "type":"normal", "image":"assets/images/lapras.png"},
-      {"name":"Leafeon", "rol":"Agil", "type":"normal", "image":"assets/images/leafeon.png"},
-      {"name":"Lucario", "rol":"Equilibrado", "type":"normal", "image":"assets/images/lucario.png"},
-      {"name":"Machamp", "rol":"Equilibrado", "type":"normal", "image":"assets/images/machamp.png"},
-      {"name":"Mamoswine", "rol":"Defensivo", "type":"normal", "image":"assets/images/mamoswine.png"},
-      {"name":"Meowscarada", "rol":"Agil", "type":"normal", "image":"assets/images/meowscarada.png"},
-      {"name":"Metagross", "rol":"Equilibrado", "type":"normal", "image":"assets/images/metagross.png"},
-      {"name":"Mew", "rol":"Ofensivo", "type":"normal", "image":"assets/images/mew.png"},
-      {"name":"MewtwoX", "rol":"Equilibrado", "type":"ex", "image":"assets/images/mewtwoX.png"},
-      {"name":"MewtwoY", "rol":"Ofensivo", "type":"ex", "image":"assets/images/mewtwoY.png"},
-      {"name":"Mimikyu", "rol":"Equilibrado", "type":"normal", "image":"assets/images/mimikyu.png"},
-      {"name":"Miraidon", "rol":"Ofensivo", "type":"ex", "image":"assets/images/miraidon.png"},
-      {"name":"Mr.mime", "rol":"Auxiliar", "type":"normal", "image":"assets/images/mr-mime.png"},
-      {"name":"Pikachu", "rol":"Ofensivo", "type":"normal", "image":"assets/images/pikachu.png"},
-      {"name":"Sableye", "rol":"Auxiliar", "type":"normal", "image":"assets/images/sableye.png"},
-      {"name":"Scizor", "rol":"Equilibrado", "type":"normal", "image":"assets/images/scizor.png"},
-      {"name":"Slowbro", "rol":"Defensivo", "type":"normal", "image":"assets/images/slowbro.png"},
-      {"name":"Snorlax", "rol":"Defensivo", "type":"normal", "image":"assets/images/snorlax.png"},
-      {"name":"Sylveon", "rol":"Ofensivo", "type":"normal", "image":"assets/images/sylveon.png"},
-      {"name":"Talonflame", "rol":"Agil", "type":"normal", "image":"assets/images/talonflame.png"},
-      {"name":"Trevenant", "rol":"Defensivo", "type":"normal", "image":"assets/images/trevenant.png"},
-      {"name":"Tsareena", "rol":"Equilibrado", "type":"normal", "image":"assets/images/tsareena.png"},
-      {"name":"Tyranitar", "rol":"Equilibrado", "type":"normal", "image":"assets/images/tyranitar.png"},
-      {"name":"Umbreon", "rol":"Defensivo", "type":"normal", "image":"assets/images/umbreon.png"},
-      {"name":"Urshifu", "rol":"Equilibrado", "type":"normal", "image":"assets/images/urshifu.png"},
-      {"name":"Venusaur", "rol":"Ofensivo", "type":"normal", "image":"assets/images/venusaur.png"},
-      {"name":"Wigglytuff", "rol":"Auxiliar", "type":"normal", "image":"assets/images/wigglytuff.png"},
-      {"name":"Zacian", "rol":"Equilibrado", "type":"ex", "image":"assets/images/zacian.png"},
-      {"name":"Zeraora", "rol":"Agil", "type":"normal", "image":"assets/images/zeraora.png"},
-      {"name":"Zoroark", "rol":"Agil", "type":"normal", "image":"assets/images/zoroark.png"}
+      {"name":"Absol", "rol":"Agil", "rarity":"normal", "type1":"Siniestro", "type2":"none", "image":"assets/images/absol.png"},
+      {"name":"Aegislash", "rol":"Equilibrado", "rarity":"normal", "type1":"Acero", "type2":"Fantasma", "image":"assets/images/aegislash.png"},
+      {"name":"Alolan-ninetales", "rol":"Ofensivo", "rarity":"normal", "type1":"Hielo", "type2":"Hada", "image":"assets/images/alolan-ninetales.png"},
+      {"name":"Armarouge", "rol":"Ofensivo", "rarity":"normal", "type1":"Fuego", "type2":"Psíquico", "image":"assets/images/armarouge.png"},
+      {"name":"Azumarill", "rol":"Equilibrado", "rarity":"normal", "type1":"Agua", "type2":"Hada", "image":"assets/images/azumarill.png"},
+      {"name":"Blastoise", "rol":"Defensivo", "rarity":"normal", "type1":"Agua", "type2":"none", "image":"assets/images/blastoise.png"},
+      {"name":"Blaziken", "rol":"Equilibrado", "rarity":"normal", "type1":"Fuego", "type2":"Lucha", "image":"assets/images/blaziken.png"},
+      {"name":"Blissey", "rol":"Auxiliar", "rarity":"normal", "type1":"Normal", "type2":"none", "image":"assets/images/blissey.png"},
+      {"name":"Buzzwole", "rol":"Equilibrado", "rarity":"normal", "type1":"Bicho", "type2":"Lucha", "image":"assets/images/buzzwole.png"},
+      {"name":"Ceruledge", "rol":"Equilibrado", "rarity":"normal", "type1":"Fuego", "type2":"Fantasma", "image":"assets/images/ceruledge.png"},
+      {"name":"Chandelure", "rol":"Ofensivo", "rarity":"normal", "type1":"Fantasma", "type2":"Fuego", "image":"assets/images/chandelure.png"},
+      {"name":"Charizard", "rol":"Equilibrado", "rarity":"normal", "type1":"Fuego", "type2":"Volador", "image":"assets/images/charizard.png"},
+      {"name":"Cinderace", "rol":"Ofensivo", "rarity":"normal", "type1":"Fuego", "type2":"none", "image":"assets/images/cinderace.png"},
+      {"name":"Clefable", "rol":"Auxiliar", "rarity":"normal", "type1":"Hada", "type2":"none", "image":"assets/images/clefable.png"},
+      {"name":"Comfey", "rol":"Auxiliar", "rarity":"normal", "type1":"Hada", "type2":"none", "image":"assets/images/comfey.png"},
+      {"name":"Cramorant", "rol":"Ofensivo", "rarity":"normal", "type1":"Volador", "type2":"Agua", "image":"assets/images/cramorant.png"},
+      {"name":"Crustle", "rol":"Defensivo", "rarity":"normal", "type1":"Bicho", "type2":"Roca", "image":"assets/images/crustle.png"},
+      {"name":"Darkrai", "rol":"Agil", "rarity":"normal", "type1":"Siniestro", "type2":"none", "image":"assets/images/darkrai.png"},
+      {"name":"Decidueye", "rol":"Ofensivo", "rarity":"normal", "type1":"Planta", "type2":"Fantasma", "image":"assets/images/decidueye.png"},
+      {"name":"Delphox", "rol":"Ofensivo", "rarity":"normal", "type1":"Fuego", "type2":"Psíquico", "image":"assets/images/delphox.png"},
+      {"name":"Dodrio", "rol":"Agil", "rarity":"normal", "type1":"Normal", "type2":"Volador", "image":"assets/images/dodrio.png"},
+      {"name":"Dragapult", "rol":"Ofensivo", "rarity":"normal", "type1":"Dragon", "type2":"Fantasma", "image":"assets/images/dragapult.png"},
+      {"name":"Dragonite", "rol":"Equilibrado", "rarity":"normal", "type1":"Dragon", "type2":"Volador", "image":"assets/images/dragonite.png"},
+      {"name":"Duraludon", "rol":"Ofensivo", "rarity":"normal", "type1":"Acero", "type2":"Dragon", "image":"assets/images/duraludon.png"},
+      {"name":"Eldegoss", "rol":"Auxiliar", "rarity":"normal", "type1":"Planta", "type2":"none", "image":"assets/images/eldegoss.png"},
+      {"name":"Espeon", "rol":"Ofensivo", "rarity":"normal", "type1":"Psíquico", "type2":"none", "image":"assets/images/espeon.png"},
+      {"name":"Falinks", "rol":"Equilibrado", "rarity":"normal", "type1":"Lucha", "type2":"none", "image":"assets/images/falinks.png"},
+      {"name":"Garchomp", "rol":"Equilibrado", "rarity":"normal", "type1":"Dragon", "type2":"Tierra", "image":"assets/images/garchomp.png"},
+      {"name":"Gardevoir", "rol":"Ofensivo", "rarity":"normal", "type1":"Psíquico", "type2":"Hada", "image":"assets/images/gardevoir.png"},
+      {"name":"Gengar", "rol":"Agil", "rarity":"normal", "type1":"Fantasma", "type2":"Veneno", "image":"assets/images/gengar.png"},
+      {"name":"Glaceon", "rol":"Ofensivo", "rarity":"normal", "type1":"Hielo", "type2":"none", "image":"assets/images/glaceon.png"},
+      {"name":"Goodra", "rol":"Defensivo", "rarity":"normal", "type1":"Dragon", "type2":"none", "image":"assets/images/goodra.png"},
+      {"name":"Greedent", "rol":"Defensivo", "rarity":"normal", "type1":"Normal", "type2":"none", "image":"assets/images/greedent.png"},
+      {"name":"Greninja", "rol":"Ofensivo", "rarity":"normal", "type1":"Agua", "type2":"Siniestro", "image":"assets/images/greninja.png"},
+      {"name":"Gyarados", "rol":"Equilibrado", "rarity":"normal", "type1":"Agua", "type2":"Volador", "image":"assets/images/gyarados.png"},
+      {"name":"Ho-Oh", "rol":"Defensivo", "rarity":"ex", "type1":"Fuego", "type2":"Volador", "image":"assets/images/ho-oh.png"},
+      {"name":"Hoopa", "rol":"Auxiliar", "rarity":"normal", "type1":"Psíquico", "type2":"Fantasma/Siniestro", "image":"assets/images/hoopa.png"},
+      {"name":"Inteleon", "rol":"Ofensivo", "rarity":"normal", "type1":"Agua", "type2":"none", "image":"assets/images/inteleon.png"},
+      {"name":"Lapras", "rol":"Defensivo", "rarity":"normal", "type1":"Agua", "type2":"Hielo", "image":"assets/images/lapras.png"},
+      {"name":"Leafeon", "rol":"Agil", "rarity":"normal", "type1":"Planta", "type2":"none", "image":"assets/images/leafeon.png"},
+      {"name":"Lucario", "rol":"Equilibrado", "rarity":"normal", "type1":"Lucha", "type2":"Acero", "image":"assets/images/lucario.png"},
+      {"name":"Machamp", "rol":"Equilibrado", "rarity":"normal", "type1":"Lucha", "type2":"none", "image":"assets/images/machamp.png"},
+      {"name":"Mamoswine", "rol":"Defensivo", "rarity":"normal", "type1":"Hielo", "type2":"Tierra", "image":"assets/images/mamoswine.png"},
+      {"name":"Meowscarada", "rol":"Agil", "rarity":"normal", "type1":"Planta", "type2":"Siniestro", "image":"assets/images/meowscarada.png"},
+      {"name":"Metagross", "rol":"Equilibrado", "rarity":"normal", "type1":"Acero", "type2":"Psíquico", "image":"assets/images/metagross.png"},
+      {"name":"Mew", "rol":"Ofensivo", "rarity":"normal", "type1":"Psíquico", "type2":"none", "image":"assets/images/mew.png"},
+      {"name":"MewtwoX", "rol":"Equilibrado", "rarity":"ex", "type1":"Psíquico", "type2":"Lucha", "image":"assets/images/mewtwoX.png"},
+      {"name":"MewtwoY", "rol":"Ofensivo", "rarity":"ex", "type1":"Psíquico", "type2":"none", "image":"assets/images/mewtwoY.png"},
+      {"name":"Mimikyu", "rol":"Equilibrado", "rarity":"normal", "type1":"Fantasma", "type2":"Hada", "image":"assets/images/mimikyu.png"},
+      {"name":"Miraidon", "rol":"Ofensivo", "rarity":"ex", "type1":"Electrico", "type2":"Dragon", "image":"assets/images/miraidon.png"},
+      {"name":"Mr.mime", "rol":"Auxiliar", "rarity":"normal", "type1":"Psíquico", "type2":"Hada", "image":"assets/images/mr-mime.png"},
+      {"name":"Pikachu", "rol":"Ofensivo", "rarity":"normal", "type1":"Electrico", "type2":"none", "image":"assets/images/pikachu.png"},
+      {"name":"Sableye", "rol":"Auxiliar", "rarity":"normal", "type1":"Siniestro", "type2":"Fantasma", "image":"assets/images/sableye.png"},
+      {"name":"Scizor", "rol":"Equilibrado", "rarity":"normal", "type1":"Bicho", "type2":"Volador/Acero", "image":"assets/images/scizor.png"},
+      {"name":"Slowbro", "rol":"Defensivo", "rarity":"normal", "type1":"Agua", "type2":"Psíquico", "image":"assets/images/slowbro.png"},
+      {"name":"Snorlax", "rol":"Defensivo", "rarity":"normal", "type1":"Normal", "type2":"none", "image":"assets/images/snorlax.png"},
+      {"name":"Sylveon", "rol":"Ofensivo", "rarity":"normal", "type1":"Hada", "type2":"none", "image":"assets/images/sylveon.png"},
+      {"name":"Talonflame", "rol":"Agil", "rarity":"normal", "type1":"Fuego", "type2":"Volador", "image":"assets/images/talonflame.png"},
+      {"name":"Trevenant", "rol":"Defensivo", "rarity":"normal", "type1":"Fantasma", "type2":"Planta", "image":"assets/images/trevenant.png"},
+      {"name":"Tsareena", "rol":"Equilibrado", "rarity":"normal", "type1":"Planta", "type2":"none", "image":"assets/images/tsareena.png"},
+      {"name":"Tyranitar", "rol":"Equilibrado", "rarity":"normal", "type1":"Roca", "type2":"Siniestro", "image":"assets/images/tyranitar.png"},
+      {"name":"Umbreon", "rol":"Defensivo", "rarity":"normal", "type1":"Siniestro", "type2":"none", "image":"assets/images/umbreon.png"},
+      {"name":"Urshifu", "rol":"Equilibrado", "rarity":"normal", "type1":"Lucha", "type2":"Siniestro/Agua", "image":"assets/images/urshifu.png"},
+      {"name":"Venusaur", "rol":"Ofensivo", "rarity":"normal", "type1":"Planta", "type2":"Veneno", "image":"assets/images/venusaur.png"},
+      {"name":"Wigglytuff", "rol":"Auxiliar", "rarity":"normal", "type1":"Normal", "type2":"Hada", "image":"assets/images/wigglytuff.png"},
+      {"name":"Zacian", "rol":"Equilibrado", "rarity":"ex", "type1":"Hada", "type2":"Acero", "image":"assets/images/zacian.png"},
+      {"name":"Zeraora", "rol":"Agil", "rarity":"normal", "type1":"Electrico", "type2":"none", "image":"assets/images/zeraora.png"},
+      {"name":"Zoroark", "rol":"Agil", "rarity":"normal", "type1":"Siniestro", "type2":"none", "image":"assets/images/zoroark.png"}
     ];
   }
 
@@ -124,6 +128,29 @@ class _RandomizerState extends State<Randomizer> {
       "Equilibrado",
       "Defensivo",
       "Auxiliar"
+    ];
+  }
+
+  void setTypeList() {
+    rols = [
+      "Siniestro",
+      "Acero",
+      "Fantasma",
+      "Hada",
+      "Fuego",
+      "Psíquico",
+      "Agua",
+      "Lucha",
+      "Volador",
+      "Planta",
+      "Dragon",
+      "Tierra",
+      "Normal",
+      //"Hielo",
+      //"Roca",
+      //"Electrico",
+      //"Veneno",
+      //"Bicho"
     ];
   }
 
@@ -164,6 +191,7 @@ class _RandomizerState extends State<Randomizer> {
       int rolSeleccionado = 1;
       setPoke();
       setRolList();
+      vsTag = "VS";
       for(var poke = 0; poke < 10; poke++) {
         if(poke == 5) {
           setRolList();
@@ -198,9 +226,15 @@ class _RandomizerState extends State<Randomizer> {
       setRolList();
       setPoke();
       for(var poke = 0; poke < 10; poke++) {
-        if(poke == 0 || poke == 5) {
+        if(poke == 0) {
           setPoke();
           rolSeleccionado = randomizer.nextInt(rols.length);
+          teamPurpleTag = rols[rolSeleccionado];
+        }
+        if(poke == 5) {
+          rolSeleccionado = randomizer.nextInt(rols.length);
+          teamOrangeTag = rols[rolSeleccionado];
+          setPoke();
         }
         rolTeam = pokemon.where((pokes) => pokes['rol'] == rols[rolSeleccionado]).toList();
         pokemonSeleccionado = randomizer.nextInt(rolTeam.length);
@@ -224,7 +258,7 @@ class _RandomizerState extends State<Randomizer> {
     setState(() {
       resetList();
       if(exs) {
-        pokemon = pokemon.where((ex) => ex['type'] == 'normal').toList();
+        pokemon = pokemon.where((ex) => ex['rarity'] == 'normal').toList();
         exTag = "Sin Ex";
         exColor = Colors.green;
         exs = false;
@@ -245,11 +279,15 @@ class _RandomizerState extends State<Randomizer> {
         rolSeleccionado = randomizer.nextInt(rols.length);
         selectRol = rols[rolSeleccionado];
         rolTag = 'Rol: ${rols[rolSeleccionado]}';
+        teamPurpleTag = rols[rolSeleccionado];
+        teamOrangeTag = rols[rolSeleccionado];
         rolColor = setColor(rols[rolSeleccionado]);
         allRol = false;
       } else {
         selectRol = "Todos";
         rolTag = 'Rol: Todos';
+        teamPurpleTag = "";
+        teamOrangeTag = "";
         rolColor = Colors.lime;
         allRol = true;
       }
@@ -257,12 +295,13 @@ class _RandomizerState extends State<Randomizer> {
   }
 
   void setPoke() {
+    vsTag = '$teamPurpleTag VS $teamOrangeTag';
     if(!exs && !allRol) {
       resetList();
-      pokemon = pokemon.where((pokes) => pokes['type'] == 'normal' && pokes['rol'] == selectRol).toList();
+      pokemon = pokemon.where((pokes) => pokes['rarity'] == 'normal' && pokes['rol'] == selectRol).toList();
     } else if(!exs && allRol) {
       resetList();
-      pokemon = pokemon.where((pokes) => pokes['type'] == 'normal').toList();
+      pokemon = pokemon.where((pokes) => pokes['rarity'] == 'normal').toList();
     } else if(exs && !allRol) {
       resetList();
       pokemon = pokemon.where((pokes) => pokes['rol'] == selectRol).toList();
@@ -351,7 +390,9 @@ class _RandomizerState extends State<Randomizer> {
             return _buildImagenConTexto(team);
           }).toList(),
         ),
-        const SizedBox(height: 20), // Separación entre las filas
+        const SizedBox(height: 10), // Separación entre las filas
+        Text(vsTag, style: const TextStyle(fontSize: 30, color: Colors.yellow)),
+        const SizedBox(height: 10), // Separación entre las filas
         // Segunda fila de imágenes
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
