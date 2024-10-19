@@ -160,6 +160,7 @@ class _RandomizerState extends State<Randomizer> {
       int pokemonSeleccionado = 1;
       setPoke();
       setRolList();
+      setRolTagTeam(true, "");
       for(var team = 1; team <= 2; team++) {
         for(var poke = 1; poke <= 5; poke++) {
           pokemonSeleccionado = randomizer.nextInt(pokemon.length);
@@ -176,6 +177,7 @@ class _RandomizerState extends State<Randomizer> {
       int pokemonSeleccionado = 1;
       setPoke();
       setRolList();
+      setRolTagTeam(true, "");
       for(var poke = 0; poke < 10; poke++) {
         pokemonSeleccionado = randomizer.nextInt(pokemon.length);
         setTeams(pokemonSeleccionado, poke);
@@ -191,7 +193,7 @@ class _RandomizerState extends State<Randomizer> {
       int rolSeleccionado = 1;
       setPoke();
       setRolList();
-      vsTag = "VS";
+      setRolTagTeam(true, "");
       for(var poke = 0; poke < 10; poke++) {
         if(poke == 5) {
           setRolList();
@@ -225,6 +227,7 @@ class _RandomizerState extends State<Randomizer> {
       List<Map<String, dynamic>> rolTeam = [];
       setRolList();
       setPoke();
+      setRolTagTeam(false, "");
       for(var poke = 0; poke < 10; poke++) {
         if(poke == 0) {
           setPoke();
@@ -279,15 +282,11 @@ class _RandomizerState extends State<Randomizer> {
         rolSeleccionado = randomizer.nextInt(rols.length);
         selectRol = rols[rolSeleccionado];
         rolTag = 'Rol: ${rols[rolSeleccionado]}';
-        teamPurpleTag = rols[rolSeleccionado];
-        teamOrangeTag = rols[rolSeleccionado];
         rolColor = setColor(rols[rolSeleccionado]);
         allRol = false;
       } else {
         selectRol = "Todos";
         rolTag = 'Rol: Todos';
-        teamPurpleTag = "";
-        teamOrangeTag = "";
         rolColor = Colors.lime;
         allRol = true;
       }
@@ -295,16 +294,17 @@ class _RandomizerState extends State<Randomizer> {
   }
 
   void setPoke() {
-    vsTag = '$teamPurpleTag VS $teamOrangeTag';
     if(!exs && !allRol) {
       resetList();
       pokemon = pokemon.where((pokes) => pokes['rarity'] == 'normal' && pokes['rol'] == selectRol).toList();
+      setRolTagTeam(false, selectRol);
     } else if(!exs && allRol) {
       resetList();
       pokemon = pokemon.where((pokes) => pokes['rarity'] == 'normal').toList();
     } else if(exs && !allRol) {
       resetList();
       pokemon = pokemon.where((pokes) => pokes['rol'] == selectRol).toList();
+      setRolTagTeam(false, selectRol);
     } else {
       resetList();
     }
@@ -329,6 +329,17 @@ class _RandomizerState extends State<Randomizer> {
     teams[counter]['name'] = pokemon['name'];
     teams[counter]['color'] = setColor(pokemon['rol']);
     teams[counter]['image'] = pokemon['image'];
+  }
+
+  void setRolTagTeam(bool allRolTag, String rol) {
+    if(!allRolTag) {
+      teamPurpleTag = rol;
+      teamOrangeTag = rol;
+    } else {
+      teamPurpleTag = "";
+      teamOrangeTag = "";
+    }
+
   }
 
   Color setColor(String rol) {
@@ -390,9 +401,9 @@ class _RandomizerState extends State<Randomizer> {
             return _buildImagenConTexto(team);
           }).toList(),
         ),
-        const SizedBox(height: 10), // Separación entre las filas
-        Text(vsTag, style: const TextStyle(fontSize: 30, color: Colors.yellow)),
-        const SizedBox(height: 10), // Separación entre las filas
+        Text(teamPurpleTag, style: TextStyle(fontSize: 20, shadows: const [Shadow(offset: Offset(2, 2), color: Colors.black)], color: setColor(teamPurpleTag))),
+        Text(vsTag, style: const TextStyle(fontSize: 20, color: Colors.yellow)),
+        Text(teamOrangeTag, style: TextStyle(fontSize: 20, shadows: const [Shadow(offset: Offset(2, 2), color: Colors.black)], color: setColor(teamOrangeTag))),
         // Segunda fila de imágenes
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
