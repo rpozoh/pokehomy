@@ -425,7 +425,7 @@ class _RandomizerState extends State<Randomizer> {
               ),
             ),
             Tooltip (
-              message: 'Define el role de los Pokémon que usaran ambos equipos',
+              message: 'Define el rol de los Pokémon que usaran ambos equipos',
               child: OutlinedButton (
                 onPressed: setRol,
                 style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3)),
@@ -475,7 +475,7 @@ class _RandomizerState extends State<Randomizer> {
               ),
             ),
             Tooltip(
-              message: 'Genera los equipos con un Pokémon de cada role en cada equipo',
+              message: 'Genera los equipos con un Pokémon de cada rol en cada equipo',
               child: OutlinedButton (
                 onPressed: allRole ? fullteam : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -484,7 +484,7 @@ class _RandomizerState extends State<Randomizer> {
               ),
             ),
             Tooltip(
-              message: 'Genera cada equipo con solo un role, puede variar el role de un equipo a otro',
+              message: 'Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro',
               child: OutlinedButton (
                 onPressed: allRole ? distinctRol : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),

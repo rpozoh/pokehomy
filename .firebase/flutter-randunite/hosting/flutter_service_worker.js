@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182",
-"assets/AssetManifest.bin.json": "5c0294af129af606398d324c36d79cc8",
-"assets/AssetManifest.json": "e0b2f691fe1570b540ea9e907fe9f1ee",
+const RESOURCES = {"assets/AssetManifest.bin": "82f4fd4c3d42f6a8151d2c00c754c733",
+"assets/AssetManifest.bin.json": "0071f600263646c45af87f86fab32603",
+"assets/AssetManifest.json": "f852c49a828a1e616db6c6e6becf7067",
 "assets/assets/images/absol.png": "f83221812bfcf409615e87fe1860e6d0",
 "assets/assets/images/aegislash.png": "3167ecdefb6f7ce41ef2cdddf4258545",
 "assets/assets/images/alolan-ninetales.png": "e62f1393c6ec857de0680f33fb6181e2",
@@ -34,6 +34,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182
 "assets/assets/images/eldegoss.png": "e11d55c20423bef05c8b24249400faf4",
 "assets/assets/images/espeon.png": "2fb0d5f1242e4fe739f8bc950c91e00e",
 "assets/assets/images/falinks.png": "037edf8c8799b79e4d915b74b7f3a487",
+"assets/assets/images/galarian-rapidash.png": "f23065265ac6c13a0d648e177897a030",
 "assets/assets/images/garchomp.png": "7c0dff5fbaa00bfc4644dbfaf6157b4c",
 "assets/assets/images/gardevoir.png": "d74d85e5478187d77869221eb7ff8545",
 "assets/assets/images/gengar.png": "a0394a144580e985af4fc3cd1946eb59",
@@ -66,6 +67,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182
 "assets/assets/images/snorlax.png": "14cbea513f8881ddbf84c23d0660938f",
 "assets/assets/images/sylveon.png": "0db1d729b1f9f2e51cc38a406ccbb4c3",
 "assets/assets/images/talonflame.png": "2753c9d3926fcd0b258ab2d3bc724624",
+"assets/assets/images/tinkaton.png": "efc701ec944415de1b03b97d2dee1f2b",
 "assets/assets/images/trevenant.png": "8fd6bb680ed52113fbfd60dd37457aa1",
 "assets/assets/images/tsareena.png": "f3be5e130baab5e85adb0ab2b8d81f6f",
 "assets/assets/images/tyranitar.png": "811174aea6bea6061a77fb88f27f70b0",
@@ -97,11 +99,11 @@ const RESOURCES = {"assets/AssetManifest.bin": "d53f370fbbb0281bfe095572c82bd182
 "icons/Icon-512.png": "325db30d3c7972adc21421357a41c7c5",
 "icons/Icon-maskable-192.png": "8463611bf4d29fe7bfb183f6508b05f4",
 "icons/Icon-maskable-512.png": "325db30d3c7972adc21421357a41c7c5",
-"index.html": "8a972f1a18fecb90d6292bec67948ed1",
-"/": "8a972f1a18fecb90d6292bec67948ed1",
-"main.dart.js": "6d6445d683ace1763d11e9cb0dfbb688",
+"index.html": "d690e923909ade34059ad211502d876c",
+"/": "d690e923909ade34059ad211502d876c",
+"main.dart.js": "877349635ab8db598af00eb084b4e2f4",
 "manifest.json": "a2603969a23eaf8e0087acb3f6b5ef3f",
-"version.json": "ab2256bc87660f8903e989203b6b0b16"};
+"version.json": "127028c198e7f67fedbbb25db3152737"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
