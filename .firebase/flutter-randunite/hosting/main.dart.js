@@ -36863,7 +36863,7 @@ KM(a){var s,r=this,q=null
 r.a.toString
 s=r.gOI()
 r.a.toString
-return new A.rZ(q,q,q,new A.Xy(),q,q,q,q,q,B.Ey,B.CE,q,q,q,B.Aq,r.gOR(),"Randomizer by Rphisto v6.0.1",q,B.H5,B.as,q,s,q,q,B.iQ,!1,!1,!1,!1,r.gOv(),!0,q,q,q,new A.jL(r,t.By))},
+return new A.rZ(q,q,q,new A.Xy(),q,q,q,q,q,B.Ey,B.CE,q,q,q,B.Aq,r.gOR(),"Randomizer by Rphisto v6.0.2",q,B.H5,B.as,q,s,q,q,B.iQ,!1,!1,!1,!1,r.gOv(),!0,q,q,q,new A.jL(r,t.By))},
 T(a){var s,r=null,q=A.xC(!1,!1,this.KM(a),r,r,r,r,!0,r,r,new A.Xz(),r,r,r)
 this.a.toString
 s=this.d
@@ -54371,7 +54371,7 @@ T(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=null,f=A.mb(g,g,h.CW,g,g,g,g,g,g,g,g,g,g
 f=A.kL(A.ma(A.rz(h.x,B.bb),h.gGT(),f),"Habilita/Deshabilita los Pok\xe9mon con marca EX")
 s=A.mb(g,g,h.ch,g,g,g,g,g,g,g,g,g,g,g,g,B.aT,g,g,g,g)
 r=t.eE
-s=A.r3(A.a([f,A.kL(A.ma(A.rz(h.z,B.bb),h.gGZ(),s),"Define el role de los Pok\xe9mon que usaran ambos equipos")],r),B.co,B.b7)
+s=A.r3(A.a([f,A.kL(A.ma(A.rz(h.z,B.bb),h.gGZ(),s),"Define el rol de los Pok\xe9mon que usaran ambos equipos")],r),B.co,B.b7)
 f=h.e
 q=B.b.b2(f,0,5)
 p=A.a0(q).h("a6<1,n>")
@@ -54389,9 +54389,9 @@ l=h.Q
 l=l==="Auxiliar"||l==="Agil"?g:h.gX0()
 l=A.kL(A.ma(B.K1,l,A.mb(g,g,B.as,B.dv,g,g,g,g,g,g,g,g,g,g,g,B.aT,g,g,g,g)),"Genera los equipos sin repetir Pok\xe9mon de un equipo a otro")
 k=h.as?h.gU3():g
-k=A.kL(A.ma(B.K2,k,A.mb(g,g,B.as,B.dv,g,g,g,g,g,g,g,g,g,g,g,B.aT,g,g,g,g)),"Genera los equipos con un Pok\xe9mon de cada role en cada equipo")
+k=A.kL(A.ma(B.K2,k,A.mb(g,g,B.as,B.dv,g,g,g,g,g,g,g,g,g,g,g,B.aT,g,g,g,g)),"Genera los equipos con un Pok\xe9mon de cada rol en cada equipo")
 j=h.as?h.gTj():g
-j=A.kL(A.ma(B.K3,j,A.mb(g,g,B.as,B.dv,g,g,g,g,g,g,g,g,g,g,g,B.aT,g,g,g,g)),"Genera cada equipo con solo un role, puede variar el role de un equipo a otro")
+j=A.kL(A.ma(B.K3,j,A.mb(g,g,B.as,B.dv,g,g,g,g,g,g,g,g,g,g,g,B.aT,g,g,g,g)),"Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro")
 i=h.as?h.gGD():g
 return A.a4u(A.a([s,p,q,o,n,m,A.r3(A.a([f,l,k,j,A.kL(A.ma(B.K_,i,A.mb(g,g,B.as,B.dv,g,g,g,g,g,g,g,g,g,g,g,B.aT,g,g,g,g)),"Genera cada equipo con Pok\xe9mon que tengan el mismo tipo")],r),B.co,B.b7),B.tL,A.r3(A.a([new A.y2(20,B.ys,h.gGB(),"Rphisto en Twitch",A.a1M(g,B.CJ,g,g,g,g,B.FR,g,g,g,g,g,g,g,g,B.uA,g),g)],r),B.co,B.b7)],r),B.Ck)},
 yx(a){var s=null,r=a.j(0,"color"),q=A.a1a(10),p=a.j(0,"image")

@@ -122,7 +122,13 @@ class _RandomizerState extends State<Randomizer> {
       {"name":"Wigglytuff", "role":"Auxiliar", "rarity":"normal", "types":"Normal/Hada", "image":"assets/images/wigglytuff.png"},
       {"name":"Zacian", "role":"Equilibrado", "rarity":"ex", "types":"Hada/Acero", "image":"assets/images/zacian.png"},
       {"name":"Zeraora", "role":"Agil", "rarity":"normal", "types":"Electrico", "image":"assets/images/zeraora.png"},
-      {"name":"Zoroark", "role":"Agil", "rarity":"normal", "types":"Siniestro", "image":"assets/images/zoroark.png"}
+      {"name":"Zoroark", "role":"Agil", "rarity":"normal", "types":"Siniestro", "image":"assets/images/zoroark.png"},
+      {"name":"Cualquier Pokémon", "role":"Todos", "rarity":"normal", "types":"Cualquier", "image":"assets/images/default.png"},
+      {"name":"Cualquier Defensivo", "role":"Defensivo", "rarity":"normal", "types":"Cualquier", "image":"assets/images/default.png"},
+      {"name":"Cualquier Ofensivo", "role":"Ofensivo", "rarity":"normal", "types":"Cualquier", "image":"assets/images/default.png"},
+      {"name":"Cualquier Auxiliar", "role":"Auxiliar", "rarity":"normal", "types":"Cualquier", "image":"assets/images/default.png"},
+      {"name":"Cualquier Equilibrado", "role":"Equilibrado", "rarity":"normal", "types":"Cualquier", "image":"assets/images/default.png"},
+      {"name":"Cualquier Agil", "role":"Agil", "rarity":"normal", "types":"Cualquier", "image":"assets/images/default.png"}
     ];
   }
 
@@ -206,7 +212,11 @@ class _RandomizerState extends State<Randomizer> {
         roleSelected = randomizer.nextInt(role.length);
         fullTeam = pokemon.where((pokes) => pokes['role'] == role[roleSelected]).toList();
         pokemonSelected = randomizer.nextInt(fullTeam.length);
-        if(fullTeam[pokemonSelected]['name'] == "MewtwoX") {
+        if(fullTeam[pokemonSelected]['types'] == 'Cualquier') {
+          setTeamPoke(poke, fullTeam[pokemonSelected]);
+          pokemon.removeWhere((element) => element['types'] == 'Cualquier');
+          role.removeAt(roleSelected);
+        } else if(fullTeam[pokemonSelected]['name'] == "MewtwoX") {
           setTeamPoke(poke, fullTeam[pokemonSelected]);
           pokemon.removeWhere((element) => element['name'] == fullTeam[pokemonSelected]['name']);
           pokemon.removeWhere((element) => element['name'] == 'MewtwoY');
@@ -246,7 +256,10 @@ class _RandomizerState extends State<Randomizer> {
         }
         roleTeam = pokemon.where((pokes) => pokes['role'] == role[roleSelected]).toList();
         pokemonSelected = randomizer.nextInt(roleTeam.length);
-        if(roleTeam[pokemonSelected]['name'] == "MewtwoX") {
+        if(roleTeam[pokemonSelected]['types'] == 'Cualquier') {
+          setTeamPoke(poke, roleTeam[pokemonSelected]);
+          pokemon.removeWhere((element) => element['types'] == 'Cualquier');
+        } else if(roleTeam[pokemonSelected]['name'] == "MewtwoX") {
           setTeamPoke(poke, roleTeam[pokemonSelected]);
           pokemon.removeWhere((element) => element['name'] == roleTeam[pokemonSelected]['name']);
           pokemon.removeWhere((element) => element['name'] == 'MewtwoY');
@@ -258,6 +271,7 @@ class _RandomizerState extends State<Randomizer> {
           setTeamPoke(poke, roleTeam[pokemonSelected]);
           pokemon.removeWhere((element) => element['name'] == roleTeam[pokemonSelected]['name']);
         }
+        
       }
     });
   }
@@ -283,7 +297,10 @@ class _RandomizerState extends State<Randomizer> {
         }
         typeTeam = pokemon.where((pokes) => pokes['types'].contains(types[typeSelected])).toList();
         pokemonSelected = randomizer.nextInt(typeTeam.length);
-        if(typeTeam[pokemonSelected]['name'] == "MewtwoX") {
+        if(typeTeam[pokemonSelected]['types'] == 'Cualquier') {
+          setTeamPoke(poke, typeTeam[pokemonSelected]);
+          pokemon.removeWhere((element) => element['types'] == 'Cualquier');
+        } else if(typeTeam[pokemonSelected]['name'] == "MewtwoX") {
           setTeamPoke(poke, typeTeam[pokemonSelected]);
           pokemon.removeWhere((element) => element['name'] == typeTeam[pokemonSelected]['name']);
           pokemon.removeWhere((element) => element['name'] == 'MewtwoY');
@@ -353,7 +370,10 @@ class _RandomizerState extends State<Randomizer> {
   }
 
   void setTeams(int pokemonSelected, int counter) {
-    if(pokemon[pokemonSelected]['name'] == "MewtwoX") {
+    if(pokemon[pokemonSelected]['types'] == 'Cualquier') {
+      setTeamPoke(counter, pokemon[pokemonSelected]);
+      pokemon.removeWhere((element) => element['types'] == 'Cualquier');
+    } else if(pokemon[pokemonSelected]['name'] == "MewtwoX") {
       setTeamPoke(counter, pokemon[pokemonSelected]);
       pokemon.removeAt(pokemonSelected);
       pokemon.removeWhere((element) => element['name'] == 'MewtwoY');
