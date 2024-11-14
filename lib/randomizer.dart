@@ -105,7 +105,7 @@ class _RandomizerState extends State<Randomizer> {
       {"name":"Miraidon", "role":"Ofensivo", "rarity":"ex", "types":"Electrico/Dragon", "image":"assets/images/miraidon.png"},
       {"name":"Mr.mime", "role":"Auxiliar", "rarity":"normal", "types":"Psíquico/Hada", "image":"assets/images/mr-mime.png"},
       {"name":"Pikachu", "role":"Ofensivo", "rarity":"normal", "types":"Electrico", "image":"assets/images/pikachu.png"},
-      //{"name":"Psyduck", "role":"Auxiliar", "rarity":"normal", "types":"Agua", "image":"assets/images/psyduck.png"},
+      {"name":"Psyduck", "role":"Auxiliar", "rarity":"normal", "types":"Agua", "image":"assets/images/psyduck.png"},
       {"name":"Sableye", "role":"Auxiliar", "rarity":"normal", "types":"Siniestro/Fantasma", "image":"assets/images/sableye.png"},
       {"name":"Scizor", "role":"Equilibrado", "rarity":"normal", "types":"Bicho/Volador/Acero", "image":"assets/images/scizor.png"},
       {"name":"Slowbro", "role":"Defensivo", "rarity":"normal", "types":"Agua/Psíquico", "image":"assets/images/slowbro.png"},
