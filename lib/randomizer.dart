@@ -316,6 +316,25 @@ class _RandomizerState extends State<Randomizer> {
     });
   }
 
+  void reOrder() {
+    setState(() {
+      int teamSelected = 0;
+      List<Map<String, dynamic>> reOrdererTeam = [];
+      for(var poke = 0; poke < 10; poke++) {
+        if(poke < 5) {
+          teamSelected = randomizer.nextInt(5 - poke);
+          reOrdererTeam.add(teams[teamSelected]);
+          teams.removeAt(teamSelected);
+        } else if(poke >= 5) {
+          teamSelected = randomizer.nextInt(10 - poke);
+          reOrdererTeam.add(teams[teamSelected]);
+          teams.removeAt(teamSelected);
+        }
+      }
+      teams = reOrdererTeam;
+    });
+  }
+
   void setEx() {
     setState(() {
       resetList();
@@ -442,6 +461,15 @@ class _RandomizerState extends State<Randomizer> {
                 style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3)),
                 child: Text(exTag,
                 style: const TextStyle(color: Colors.black)),
+              ),
+            ),
+            Tooltip (
+              message: 'Reordena los equipos con los Pokémon en pantalla',
+              child: OutlinedButton (
+                onPressed: reOrder,
+                style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3)),
+                child: const Text('Desordenar',
+                style: TextStyle(color: Colors.black)),
               ),
             ),
             Tooltip (
