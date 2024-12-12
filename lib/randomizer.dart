@@ -112,7 +112,7 @@ class _RandomizerState extends State<Randomizer> {
       {"name":"Snorlax", "role":"Defensivo", "rarity":"normal", "types":"Normal", "image":"assets/images/snorlax.png"},
       {"name":"Sylveon", "role":"Ofensivo", "rarity":"normal", "types":"Hada", "image":"assets/images/sylveon.png"},
       {"name":"Talonflame", "role":"Agil", "rarity":"normal", "types":"Fuego/Volador", "image":"assets/images/talonflame.png"},
-      //{"name":"Tinkaton", "role":"Agil", "rarity":"normal", "types":"Hada/Acero", "image":"assets/images/tinkaton.png"},
+      {"name":"Tinkaton", "role":"Equilibrado", "rarity":"normal", "types":"Hada/Acero", "image":"assets/images/tinkaton.png"},
       {"name":"Trevenant", "role":"Defensivo", "rarity":"normal", "types":"Fantasma/Planta", "image":"assets/images/trevenant.png"},
       {"name":"Tsareena", "role":"Equilibrado", "rarity":"normal", "types":"Planta", "image":"assets/images/tsareena.png"},
       {"name":"Tyranitar", "role":"Equilibrado", "rarity":"normal", "types":"Roca/Siniestro", "image":"assets/images/tyranitar.png"},
