@@ -436,6 +436,28 @@ class _RandomizerState extends State<Randomizer> {
         color = Colors.green;
       case "Auxiliar":
         color = Colors.yellow;
+      case "Siniestro":
+        color = const Color.fromARGB(255, 41, 41, 41);
+      case "Acero":
+        color = const Color.fromARGB(255, 59, 58, 58);
+      case "Fantasma":
+        color = const Color.fromARGB(255, 69, 39, 82);
+      case "Hada":
+        color = const Color.fromARGB(255, 218, 123, 154);
+      case "Fuego":
+        color = Colors.red;
+      case "Psíquico":
+        color = const Color.fromARGB(255, 163, 31, 123);
+      case "Agua":
+        color = Colors.blue;
+      case "Lucha":
+        color = const Color.fromARGB(255, 134, 45, 12);
+      case "Volador":
+        color = const Color.fromARGB(255, 96, 141, 192);
+      case "Planta":
+        color = const Color.fromARGB(255, 1, 99, 9);
+      case "Dragon":
+        color = const Color.fromARGB(255, 17, 11, 85);
     }
     return color;
   }
