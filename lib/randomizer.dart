@@ -585,10 +585,33 @@ class _RandomizerState extends State<Randomizer> {
           ),
         ),
         const SizedBox(height: 12),
-        Text(
-          '${teamData['name']}',
-          style: const TextStyle(fontSize: 30, color: Colors.yellow),
-        ),
+        Stack(
+          children: <Widget>[
+            // Stroked text as border.
+            Text(
+              '${teamData['name']}',
+              style: TextStyle(
+                fontSize: 30,
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = 8
+                  ..color = const Color(0xff3c5aa6),
+              ),
+            ),
+            // Solid text as fill.
+            Text(
+              '${teamData['name']}',
+              style: const TextStyle(
+                fontSize: 30,
+                color: Color(0xffffcb05),
+              ),
+            ),
+          ],
+        )
+        //Text(
+        //  '${teamData['name']}',
+        //  style: const TextStyle(fontSize: 30, color: Colors.yellow),
+        //),
       ],
     );
   }
