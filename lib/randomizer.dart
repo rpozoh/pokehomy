@@ -491,9 +491,71 @@ class _RandomizerState extends State<Randomizer> {
             return _buildImagenConTexto(team);
           }).toList(),
         ),
-        Text(teamPurpleTag, style: TextStyle(fontSize: 20, shadows: const [Shadow(offset: Offset(2, 2), color: Colors.black)], color: setColor(teamPurpleTag))),
-        Text(vsTag, style: const TextStyle(fontSize: 20, color: Colors.yellow)),
-        Text(teamOrangeTag, style: TextStyle(fontSize: 20, shadows: const [Shadow(offset: Offset(2, 2), color: Colors.black)], color: setColor(teamOrangeTag))),
+        Stack(
+          children: <Widget>[
+            Text(
+              teamPurpleTag,
+              style: TextStyle(
+                fontSize: 20,
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = 5
+                  ..color = Colors.black,
+              ),
+            ),
+            Text(
+              teamPurpleTag,
+              style: TextStyle(
+                fontSize: 20,
+                shadows: const [Shadow(offset: Offset(2, 2), color: Colors.black)],
+                color: setColor(teamPurpleTag)
+              )
+            ),
+          ],
+        ),
+        Stack(
+          children: <Widget>[
+            Text(
+              vsTag,
+              style: TextStyle(
+                fontSize: 20,
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = 5
+                  ..color = Colors.black,
+              ),
+            ),
+            Text(
+              vsTag,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.yellow
+              )
+            ),
+          ],
+        ),
+        Stack(
+          children: <Widget>[
+            Text(
+              teamOrangeTag,
+              style: TextStyle(
+                fontSize: 20,
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = 5
+                  ..color = Colors.black,
+              ),
+            ),
+              Text(
+                teamOrangeTag,
+                style: TextStyle(
+                  fontSize: 20,
+                  shadows: const [Shadow(offset: Offset(2, 2), color: Colors.black)],
+                  color: setColor(teamOrangeTag)
+                )
+              ),
+            ],
+        ),
         // Segunda fila de imágenes
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
