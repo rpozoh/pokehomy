@@ -180,6 +180,7 @@ class _RandomizerState extends State<Randomizer> {
         }
         setPoke();
       }
+      setRol();
     });
   }
 
@@ -194,6 +195,7 @@ class _RandomizerState extends State<Randomizer> {
         setTeams(pokemonSelected, poke);
       }
       setPoke();
+      setRol();
     });
   }
 
@@ -488,8 +490,8 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip (
               message: 'Reordena los equipos con los Pokémon en pantalla',
               child: OutlinedButton (
-                onPressed: reOrder,
-                style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3)),
+                onPressed: allRole ? reOrder : null,
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Desordenar',
                 style: TextStyle(color: Colors.black)),
               ),
