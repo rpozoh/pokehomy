@@ -180,7 +180,7 @@ class _RandomizerState extends State<Randomizer> {
         }
         setPoke();
       }
-      setRol();
+      if(!allRole) setRol();
     });
   }
 
@@ -195,7 +195,7 @@ class _RandomizerState extends State<Randomizer> {
         setTeams(pokemonSelected, poke);
       }
       setPoke();
-      setRol();
+      if(!allRole) setRol();
     });
   }
 

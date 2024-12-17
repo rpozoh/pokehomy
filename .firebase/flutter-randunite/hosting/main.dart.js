@@ -36868,7 +36868,7 @@ KM(a){var s,r=this,q=null
 r.a.toString
 s=r.gOI()
 r.a.toString
-return new A.t_(q,q,q,new A.Xz(),q,q,q,q,q,B.EJ,B.CP,q,q,q,B.AB,r.gOR(),"Randomizer by Rphisto v6.3.6",q,B.Hg,B.af,q,s,q,q,B.iQ,!1,!1,!1,!1,r.gOv(),!0,q,q,q,new A.jN(r,t.By))},
+return new A.t_(q,q,q,new A.Xz(),q,q,q,q,q,B.EJ,B.CP,q,q,q,B.AB,r.gOR(),"Randomizer by Rphisto v6.3.7",q,B.Hg,B.af,q,s,q,q,B.iQ,!1,!1,!1,!1,r.gOv(),!0,q,q,q,new A.jN(r,t.By))},
 T(a){var s,r=null,q=A.xD(!1,!1,this.KM(a),r,r,r,r,!0,r,r,new A.XA(),r,r,r)
 this.a.toString
 s=this.d
@@ -54457,7 +54457,7 @@ $0(){var s,r,q,p,o=this.a
 o.eN()
 o.r=A.a(["Ofensivo","Agil","Equilibrado","Defensivo","Auxiliar"],t.s)
 o.iq(!0,"")
-for(s=o.d,r=0,q=1;q<=2;++q){for(p=1;p<=5;++p){o.xs(s.e7(o.f.length),r);++r}o.eN()}o.qJ()},
+for(s=o.d,r=0,q=1;q<=2;++q){for(p=1;p<=5;++p){o.xs(s.e7(o.f.length),r);++r}o.eN()}if(!o.as)o.qJ()},
 $S:0}
 A.YC.prototype={
 $0(){var s,r,q=this.a
@@ -54466,7 +54466,7 @@ q.r=A.a(["Ofensivo","Agil","Equilibrado","Defensivo","Auxiliar"],t.s)
 q.iq(!0,"")
 for(s=q.d,r=0;r<10;++r)q.xs(s.e7(q.f.length),r)
 q.eN()
-q.qJ()},
+if(!q.as)q.qJ()},
 $S:0}
 A.YB.prototype={
 $0(){var s,r,q,p,o,n,m,l,k,j="removeWhere",i={}
