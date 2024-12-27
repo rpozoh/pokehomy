@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:pokehomy/randomizer.dart';
+import 'package:pokehomy/UI/randomizer.dart';
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.beginAlignment, this.endAlignment, this.colors, {super.key});

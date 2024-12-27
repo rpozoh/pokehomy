@@ -1,0 +1,46 @@
+import 'package:pokehomy/models/pokemon_type.dart';
+
+final type = [
+  Type({
+      "name":"Siniestro",
+  }),
+  Type({
+      "name":"Acero",
+  }),
+  Type({
+      "name":"Fantasma",
+  }),
+  Type({
+      "name":"Hada",
+  }),
+  Type({
+      "name":"Fuego",
+  }),
+  Type({
+      "name":"Psíquico",
+  }),
+  Type({
+      "name":"Agua",
+  }),
+  Type({
+      "name":"Lucha",
+  }),
+  Type({
+      "name":"Volador",
+  }),
+  Type({
+      "name":"Planta",
+  }),
+  Type({
+      "name":"Dragon",
+  }),
+  Type({
+      "name":"Normal",
+      //"name":"Tierra",
+      //"name":"Hielo",
+      //"name":"Roca",
+      //"name":"Electrico",
+      //"name":"Veneno",
+      //"name":"Bicho"
+  }),
+];
