@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokehomy/data/generic_data.dart';
+import 'package:pokehomy/data/pokemon_data_source.dart';
 import 'package:pokehomy/functions/ban_pokemon.dart';
 
 void mostrarDialogoPersonalizado(BuildContext context) {
@@ -43,21 +44,17 @@ void mostrarDialogoPersonalizado(BuildContext context) {
                 ],
               ),
               const SizedBox(height: 10),
-              DataTable(
+              PaginatedDataTable(
                 columns: const [
                   DataColumn(label: Text("Nombre", style: TextStyle(fontWeight: FontWeight.bold))),
                   DataColumn(label: Text("Estado", style: TextStyle(fontWeight: FontWeight.bold))),
                 ],
-                rows: pokemonList.map((pokemon) {
-                  return DataRow(
-                    cells: [
-                      DataCell(Text(pokemon.pokemon['name'].toString())),
-                      DataCell(Text(pokemon.pokemon['status'].toString()))
-                    ]
-                  );
-                }).toList(),
+                source: PokemonDataSource(),
+                rowsPerPage: 10,
+                columnSpacing: 20,
+                showCheckboxColumn: true,
               ),
-              Stack(
+              /* Stack(
                 children: <Widget>[
                   // Stroked text as border.
                   Text(
@@ -79,12 +76,12 @@ void mostrarDialogoPersonalizado(BuildContext context) {
                     ),
                   ),
                 ],
-              ),
+              ), 
               OutlinedButton(
                 onPressed: banPokemon,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.red, side: const BorderSide(width: 3)),
                 child: const Text("Banear", style: TextStyle(color: Colors.black)),
-              ),
+              ),*/
               const SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () => Navigator.of(context).pop(),

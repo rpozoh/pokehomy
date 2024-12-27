@@ -222,9 +222,9 @@ final pokemon = [
     "role": "Equilibrado",
     "rarity": "Normal",
     "types": "Dragon/Tierra",
-    "image": "assets/images/garchomp.png"
+    "image": "assets/images/garchomp.png",
+    "status": "Disponible",
   }),
-      //{"name":"Galarian-Rapidash", "role":"Equilibrado", "rarity":"Normal", "types":"Psíquico/Hada", "image":"assets/images/galarian-rapidash.png", "status": "Disponible",},
   Pokemon({
     "name": "Gardevoir",
     "role": "Ofensivo",
