@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:pokehomy/UI/ban_pokemon.dart';
 import 'package:pokehomy/data/generic_data.dart';
 import 'package:pokehomy/functions/generate_full_team.dart';
 import 'package:pokehomy/functions/random_team.dart';
@@ -262,6 +263,15 @@ class _RandomizerState extends State<Randomizer> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget> [
+            Tooltip(
+              message: 'Permite administrar la lista de baneados',
+              child: OutlinedButton (
+                onPressed: () => mostrarDialogoPersonalizado(context),
+                style: OutlinedButton.styleFrom(backgroundColor: Colors.red, side: const BorderSide(width: 3)),
+                child: const Text('Baneos',
+                style: TextStyle(color: Colors.black)),
+              ),
+            ),
             IconButton(
               onPressed: goTwitch,
               icon: const FaIcon(FontAwesomeIcons.twitch),
