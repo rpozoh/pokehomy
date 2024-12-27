@@ -8,6 +8,8 @@ bool setTeams(int pokemonSelected, int counter) {
     return false;
   } else if(pokemonList[pokemonSelected].pokemon['name'] == "MewtwoY" && pokemonTeam.where((pokemonTeam) => pokemonTeam.team['name'] == "MewtwoX").isNotEmpty) {
     return false;
+  } else if(pokemonList[pokemonSelected].pokemon['status'] == "Baneado") {
+    return false;
   } else {
     return true;
   }
