@@ -102,8 +102,8 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip (
               message: 'Genera equipo solo de Eevolutions',
               child: OutlinedButton (
-                onPressed: setEevees,
-                style: OutlinedButton.styleFrom(backgroundColor: eeveeColor, side: const BorderSide(width: 3)),
+                onPressed: allRole ? setEevees : null,
+                style: OutlinedButton.styleFrom(backgroundColor: eeveeColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: Text(eeveeTag,
                 style: const TextStyle(color: Colors.black)),
               ),
@@ -120,8 +120,8 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip (
               message: 'Define el rol de los Pokémon que usaran ambos equipos',
               child: OutlinedButton (
-                onPressed: setRol,
-                style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3)),
+                onPressed: !eevees ? setRol: null,
+                style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: Text(roleTag,
                 style: const TextStyle(color: Colors.black)),
               ),
@@ -223,7 +223,7 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Genera los equipos sin repetir Pokémon de un equipo a otro',
               child: OutlinedButton (
-                onPressed: (selectRole == 'Auxiliar' || selectRole == 'Agil') ? null : randomNoRepeat,
+                onPressed: (selectRole == 'Auxiliar' || selectRole == 'Agil' || eevees) ? null : randomNoRepeat,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Sin repetir',
                 style: TextStyle(color: Colors.black)),
@@ -232,7 +232,7 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Genera los equipos con un Pokémon de cada rol en cada equipo',
               child: OutlinedButton (
-                onPressed: allRole ? fullteam : null,
+                onPressed: (allRole && !eevees) ? fullteam : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Balanceado',
                 style: TextStyle(color: Colors.black)),
@@ -241,7 +241,7 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro',
               child: OutlinedButton (
-                onPressed: allRole ? distinctRol : null,
+                onPressed: (allRole && !eevees) ? distinctRol : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('RolA vs RolB',
                 style: TextStyle(color: Colors.black)),
@@ -250,7 +250,7 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Genera cada equipo con Pokémon que tengan el mismo tipo',
               child: OutlinedButton (
-                onPressed: allRole ? sameTypeTeam : null,
+                onPressed: (allRole && !eevees) ? sameTypeTeam : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Por tipo',
                 style: TextStyle(color: Colors.black)),
