@@ -3,45 +3,33 @@ import 'package:pokehomy/data/generic_data.dart';
 import 'package:pokehomy/data/pokemon_list.dart';
 import 'package:pokehomy/data/pokemon_role.dart';
 
-void setPokemonEx() {
-  if(exs) {
-    pokemonList = pokemonList.where((ex) => ex.pokemon['rarity'] == 'normal').toList();
-    exTag = "Sin Ex";
-    exColor = Colors.green;
-    exs = false;
-  } else {
-    exTag = "Con Ex";
-    exColor = Colors.red;
-    exs = true;
-    pokemonList = pokemon;
-  }
+void setLegendaryPokemon() {
+  pokemonList = legendaries ? pokemon : pokemonList.where((legendary) => legendary.pokemon['rarity'] == 'Normal' || legendary.pokemon['rarity'] == "Eevee").toList();
+  legendaryTag = legendaries ? legendaryTagTrue : legendaryTagFalse;
+  exColor = legendaries ? Colors.red : Colors.green;
+  legendaries = legendaries ? false : true;
+}
+
+void setEeveeTeam() {
+  pokemonList = eevees ? pokemon : pokemonList.where((eevee) => eevee.pokemon['rarity'] == 'Eevee').toList();
+  eeveeTag = eevees ? eeveeTagFalse : eeveeTagTrue;
+  eeveeColor = eevees ? Colors.red : Colors.green;
+  eevees = eevees ? false : true;
 }
 
 void setTeamRol() {
-  int roleSelected = 1;
-  if(allRole) {
-    roleSelected = randomizer.nextInt(role.length);
-    roleTag = 'Rol: ${roleList[roleSelected].role['name']}';
-    pokemonList = pokemonList.where((role) => role.pokemon['role'] == roleList[roleSelected].role['name']).toList();
-    roleColor = setColor(roleList[roleSelected].role['name'].toString());
-    allRole = false;
-  } else {
-    selectRole = "Todos";
-    roleTag = 'Rol: Todos';
-    roleColor = Colors.lime;
-    allRole = true;
-    pokemonList = pokemon;
-  }
+  int roleSelected = allRole ? randomizer.nextInt(role.length) : 1;
+  selectRole = allRole ? roleList[roleSelected].role['name']! : "Todos";
+  roleTag = allRole ? 'Rol: ${roleList[roleSelected].role['name']}' : 'Rol: Todos';
+  roleColor = allRole ? setColor(roleList[roleSelected].role['name'].toString()) : Colors.lime;
+  pokemonList = allRole ? pokemonList.where((role) => role.pokemon['role'] == roleList[roleSelected].role['name']).toList() : pokemon;
+  allRole = allRole ? false : true;
+  setRoleTagTeam(allRole, selectRole);
 }
 
 void setRoleTagTeam(bool allRoleTag, String role) {
-    if(!allRoleTag) {
-      teamPurpleTag = role;
-      teamOrangeTag = role;
-    } else {
-      teamPurpleTag = "";
-      teamOrangeTag = "";
-    }
+  teamPurpleTag = allRoleTag ? "" : role;
+  teamOrangeTag = allRoleTag ? "" : role;
   }
 
 Color setColor(String role) {

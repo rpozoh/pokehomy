@@ -11,8 +11,15 @@ var pokemonTeam = team;
 var roleList = role;
 var typeList = type;
 
-var exTag = "Con Ex";
-var exs = true;
+var legendaryTag = "Con Legendarios";
+var legendaryTagTrue = "Con Legendarios";
+var legendaryTagFalse = "Sin Legendarios";
+var legendaries = false;
+
+var eeveeTag = "Eevee: No";
+var eeveeTagTrue = "Eevee: Si";
+var eeveeTagFalse = "Eevee: No";
+var eevees = false;
 
 var roleTag = "Rol: Todos";
 var selectRole = "Todos";
@@ -25,3 +32,4 @@ const vsTag = "VS";
 
 Color roleColor = Colors.lime;
 Color exColor = Colors.red;
+Color eeveeColor = Colors.red;

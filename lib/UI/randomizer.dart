@@ -58,9 +58,15 @@ class _RandomizerState extends State<Randomizer> {
     });
   }
 
-  void setEx() {
+  void setLegends() {
     setState(() {
-      setPokemonEx();
+      setLegendaryPokemon();
+    });
+  }
+
+  void setEevees() {
+    setState(() {
+      setEeveeTeam();
     });
   }
 
@@ -85,11 +91,20 @@ class _RandomizerState extends State<Randomizer> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget> [
             Tooltip (
-              message: 'Habilita/Deshabilita los Pokémon con marca EX',
+              message: 'Habilita/Deshabilita los Pokémon legendarios',
               child: OutlinedButton (
-                onPressed: setEx,
+                onPressed: setLegends,
                 style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3)),
-                child: Text(exTag,
+                child: Text(legendaryTag,
+                style: const TextStyle(color: Colors.black)),
+              ),
+            ),
+            Tooltip (
+              message: 'Genera equipo solo de Eevolutions',
+              child: OutlinedButton (
+                onPressed: setEevees,
+                style: OutlinedButton.styleFrom(backgroundColor: eeveeColor, side: const BorderSide(width: 3)),
+                child: Text(eeveeTag,
                 style: const TextStyle(color: Colors.black)),
               ),
             ),
