@@ -7,10 +7,10 @@ void generateRandomNoRepeat() {
   final pokemonTeam = <int>{};
   while(pokemonTeam.length < 10) {
     pokemonTeam.add(randomizer.nextInt(pokemonList.length));
-    if(setTeams(pokemonTeam.elementAt(pokemonTeam.length - 1), pokemonTeam.length - 1)) {
-      setTeamPoke(pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon, pokemonTeam.length - 1);
+    if(setTeams(pokemonList[pokemonTeam.last].pokemon)) {
+      setTeamPoke(pokemonList[pokemonTeam.last].pokemon, pokemonTeam.length - 1);
     } else {
-      pokemonTeam.remove(pokemonTeam.elementAt(pokemonTeam.length - 1));
+      pokemonTeam.remove(pokemonTeam.last);
     }
   }
   if(!allRole) setTeamRol();

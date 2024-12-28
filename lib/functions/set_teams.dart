@@ -1,14 +1,14 @@
 import 'package:pokehomy/data/generic_data.dart';
 import 'package:pokehomy/functions/generics.dart';
 
-bool setTeams(int pokemonSelected, int counter) {
-  if(pokemonList[pokemonSelected].pokemon['types'] == 'Cualquier' && pokemonTeam.where((pokemonTeam) => pokemonTeam.team['name'].contains("Cualquier")).isNotEmpty) {
+bool setTeams(var pokemonSelected) {
+  if(pokemonSelected['types'] == 'Cualquier' && pokemonTeam.where((pokemonTeam) => pokemonTeam.team['name'].contains("Cualquier")).isNotEmpty) {
     return false;
-  } else if(pokemonList[pokemonSelected].pokemon['name'] == "MewtwoX" && pokemonTeam.where((pokemonTeam) => pokemonTeam.team['name'] == "MewtwoY").isNotEmpty) {
+  } else if(pokemonSelected['name'] == "MewtwoX" && pokemonTeam.where((pokemonTeam) => pokemonTeam.team['name'] == "MewtwoY").isNotEmpty) {
     return false;
-  } else if(pokemonList[pokemonSelected].pokemon['name'] == "MewtwoY" && pokemonTeam.where((pokemonTeam) => pokemonTeam.team['name'] == "MewtwoX").isNotEmpty) {
+  } else if(pokemonSelected['name'] == "MewtwoY" && pokemonTeam.where((pokemonTeam) => pokemonTeam.team['name'] == "MewtwoX").isNotEmpty) {
     return false;
-  } else if(pokemonList[pokemonSelected].pokemon['status'] == "Baneado") {
+  } else if(pokemonSelected['status'] == "Baneado") {
     return false;
   } else {
     return true;

@@ -10,18 +10,18 @@ void generateRandomTeam() {
   final pokemonTeamB = <int>{};
   while(pokemonTeamA.length < 5) {
     pokemonTeamA.add(randomizer.nextInt(pokemonList.length));
-    if(setTeams(pokemonTeamA.elementAt(pokemonTeamA.length - 1), pokemonTeamA.length - 1)) {
-      setTeamPoke(pokemonList[pokemonTeamA.elementAt(pokemonTeamA.length - 1)].pokemon, pokemonTeamA.length - 1);
+    if(setTeams(pokemonList[pokemonTeamA.last].pokemon)) {
+      setTeamPoke(pokemonList[pokemonTeamA.last].pokemon, pokemonTeamA.length - 1);
     } else {
-      pokemonTeamA.remove(pokemonTeamA.elementAt(pokemonTeamA.length - 1));
+      pokemonTeamA.remove(pokemonTeamA.last);
     }
   }
   while(pokemonTeamB.length < 5) {
     pokemonTeamB.add(randomizer.nextInt(pokemonList.length));
-    if(setTeams(pokemonTeamB.elementAt(pokemonTeamB.length - 1), pokemonTeamB.length + 4)) {
-      setTeamPoke(pokemonList[pokemonTeamB.elementAt(pokemonTeamB.length - 1)].pokemon, pokemonTeamB.length + 4);
+    if(setTeams(pokemonList[pokemonTeamB.last].pokemon)) {
+      setTeamPoke(pokemonList[pokemonTeamB.last].pokemon, pokemonTeamB.length + 4);
     } else {
-      pokemonTeamB.remove(pokemonTeamB.elementAt(pokemonTeamB.length - 1));
+      pokemonTeamB.remove(pokemonTeamB.last);
     }
   }
   if(!allRole) setTeamRol();

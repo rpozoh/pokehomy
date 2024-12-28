@@ -2,23 +2,37 @@ import 'package:pokehomy/functions/set_teams.dart';
 import 'package:pokehomy/functions/generics.dart';
 import 'package:pokehomy/data/generic_data.dart';
 
+import 'package:pokehomy/models/pokemon_list.dart';
+
 void generateSameTypeTeam() {
   setRoleTagTeam(false, "");
   final typeTeams = <int>{};
-  final pokemonTeam = <int>{};
+  final pokemonTeamA = <int>{};
+  final pokemonTeamB = <int>{};
+  int randomType = 0;
   while(typeTeams.length < 2) {
     typeTeams.add(randomizer.nextInt(typeList.length));
   }
-  teamPurpleTag = typeList[typeTeams.elementAt(0)].type['name']!;
-  teamOrangeTag = typeList[typeTeams.elementAt(1)].type['name']!;
-  while(pokemonTeam.length < 10) {
-    pokemonTeam.add(randomizer.nextInt(pokemonList.length));
-    if(pokemonTeam.length <= 5 && pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon['types'].toString().contains(typeList[typeTeams.elementAt(0)].type['name']!) && setTeams(pokemonTeam.elementAt(pokemonTeam.length - 1), pokemonTeam.length - 1)) {
-      setTeamPoke(pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon, pokemonTeam.length - 1);
-    } else if(pokemonTeam.length > 5 && pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon['types'].toString().contains(typeList[typeTeams.elementAt(1)].type['name']!) && setTeams(pokemonTeam.elementAt(pokemonTeam.length - 1), pokemonTeam.length - 1)) {
-      setTeamPoke(pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon, pokemonTeam.length - 1);
-    } else {
-      pokemonTeam.remove(pokemonTeam.elementAt(pokemonTeam.length - 1));
+  teamPurpleTag = typeList[typeTeams.first].type['name']!;
+  teamOrangeTag = typeList[typeTeams.last].type['name']!;
+
+  List<Pokemon> pokemonType = pokemonList.where((pokemonList) => pokemonList.pokemon['types'].toLowerCase().contains(teamPurpleTag.toLowerCase())).toList();
+
+  while(pokemonTeamA.length < 5) {
+    randomType = randomizer.nextInt(pokemonType.length);
+    if(setTeams(pokemonType[randomType].pokemon)) {
+      pokemonTeamA.add(randomType);
+      setTeamPoke(pokemonType[pokemonTeamA.last].pokemon, pokemonTeamA.length - 1);
+    }
+  }
+
+  pokemonType = pokemonList.where((pokemonList) => pokemonList.pokemon['types'].toLowerCase().contains(teamOrangeTag.toLowerCase())).toList();
+
+  while(pokemonTeamB.length < 5) {
+    randomType = randomizer.nextInt(pokemonType.length);
+    if(setTeams(pokemonType[randomType].pokemon)) {
+      pokemonTeamB.add(randomType);
+      setTeamPoke(pokemonType[pokemonTeamB.last].pokemon, pokemonTeamB.length + 4);
     }
   }
 }

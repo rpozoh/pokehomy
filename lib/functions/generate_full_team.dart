@@ -17,12 +17,12 @@ void generateFullteam() {
 
   while(pokemonTeam.length < 10) {
     pokemonTeam.add(randomizer.nextInt(pokemonList.length));
-    if(pokemonTeam.length <= 5 && pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon['role'] == roleList[roleTeamA.elementAt(pokemonTeam.length - 1)].role['name'] && setTeams(pokemonTeam.elementAt(pokemonTeam.length - 1), pokemonTeam.length - 1)) {
+    if(pokemonTeam.length <= 5 && pokemonList[pokemonTeam.last].pokemon['role'] == roleList[roleTeamA.elementAt(pokemonTeam.length - 1)].role['name'] && setTeams(pokemonList[pokemonTeam.last].pokemon)) {
       setTeamPoke(pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon, pokemonTeam.length - 1);
-    } else if(pokemonTeam.length > 5 && pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon['role'] == roleList[roleTeamB.elementAt(pokemonTeam.length - 6)].role['name'] && setTeams(pokemonTeam.elementAt(pokemonTeam.length - 1), pokemonTeam.length - 1)) {
-      setTeamPoke(pokemonList[pokemonTeam.elementAt(pokemonTeam.length - 1)].pokemon, pokemonTeam.length - 1);
+    } else if(pokemonTeam.length > 5 && pokemonList[pokemonTeam.last].pokemon['role'] == roleList[roleTeamB.elementAt(pokemonTeam.length - 6)].role['name'] && setTeams(pokemonList[pokemonTeam.last].pokemon)) {
+      setTeamPoke(pokemonList[pokemonTeam.last].pokemon, pokemonTeam.length - 1);
     } else {
-      pokemonTeam.remove(pokemonTeam.elementAt(pokemonTeam.length - 1));
+      pokemonTeam.remove(pokemonTeam.last);
     }
   }
 }

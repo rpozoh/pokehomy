@@ -23,7 +23,7 @@ void showPokemonBanListModal(BuildContext context) {
                 children: <Widget>[
                   // Stroked text as border.
                   Text(
-                    'Lista de Pokémon',
+                    'Banea a tú Pokémon favorito',
                     style: TextStyle(
                       fontSize: 30,
                       foreground: Paint()
@@ -34,7 +34,7 @@ void showPokemonBanListModal(BuildContext context) {
                   ),
                   // Solid text as fill.
                   const Text(
-                    'Lista de Pokémon',
+                    'Banea a tú Pokémon favorito',
                     style: TextStyle(
                       fontSize: 30,
                       color: Color(0xffffcb05),
@@ -88,10 +88,11 @@ class _PokemonBanListModalState extends State<PokemonBanListModal> {
       child: PaginatedDataTable(
         header: 
         Stack(
+          alignment: AlignmentDirectional.center,
           children: <Widget>[
             // Stroked text as border.
             Text(
-              'Banea a tú Pokémon favorito',
+              'Pokémon',
               style: TextStyle(
                 fontSize: 20,
                 foreground: Paint()
@@ -102,7 +103,7 @@ class _PokemonBanListModalState extends State<PokemonBanListModal> {
             ),
             // Solid text as fill.
             const Text(
-              'Banea a tú Pokémon favorito',
+              'Pokémon',
               style: TextStyle(
                 fontSize: 20,
                 color: Color(0xffffcb05),
