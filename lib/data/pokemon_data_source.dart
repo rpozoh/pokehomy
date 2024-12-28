@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokehomy/data/generic_data.dart';
+import 'package:pokehomy/functions/ban_pokemon.dart';
 import 'package:pokehomy/models/pokemon_list.dart';
 
 class PokemonDataSource extends DataTableSource {
@@ -13,8 +14,19 @@ class PokemonDataSource extends DataTableSource {
       cells: [
         DataCell(Text(pokemon.pokemon['name'])),
         DataCell(Text(pokemon.pokemon['status'])),
+        DataCell(OutlinedButton(
+            onPressed: () => _updateValue(index),
+            style: OutlinedButton.styleFrom(backgroundColor: pokemon.pokemon['status'] == 'Disponible' ? banButtonColor : disbanButtonColor, side: const BorderSide(width: 3)),
+            child: Text(pokemon.pokemon['status'] == 'Disponible' ? banButtonTag : disbanButtonTag, style: const TextStyle(color: Colors.black)),
+          ),
+        ),
       ],
     );
+  }
+
+  void _updateValue(int index) {
+    banPokemon(index);
+    notifyListeners(); // Notifica al widget que los datos han cambiado
   }
 
   @override

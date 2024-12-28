@@ -28,8 +28,16 @@ var allRole = true;
 var teamPurpleTag = "";
 var teamOrangeTag = "";
 
+var currentBanStatus = "Banear";
+var banButtonTag = "Banear";
+var disbanButtonTag = "Desbanear";
+
 const vsTag = "VS";
 
 Color roleColor = Colors.lime;
 Color exColor = Colors.red;
 Color eeveeColor = Colors.red;
+
+Color currentBanButtonColor = Colors.red;
+Color banButtonColor = Colors.red;
+Color disbanButtonColor = Colors.green;

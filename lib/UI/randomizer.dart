@@ -266,7 +266,7 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip(
               message: 'Permite administrar la lista de baneados',
               child: OutlinedButton (
-                onPressed: () => mostrarDialogoPersonalizado(context),
+                onPressed: () => showPokemonBanListModal(context),
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.red, side: const BorderSide(width: 3)),
                 child: const Text('Baneos',
                 style: TextStyle(color: Colors.black)),
