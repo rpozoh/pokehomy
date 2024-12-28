@@ -100,11 +100,11 @@ const RESOURCES = {"assets/AssetManifest.bin": "97936924f24e124ffc7900014beaaca1
 "icons/Icon-512.png": "325db30d3c7972adc21421357a41c7c5",
 "icons/Icon-maskable-192.png": "8463611bf4d29fe7bfb183f6508b05f4",
 "icons/Icon-maskable-512.png": "325db30d3c7972adc21421357a41c7c5",
-"index.html": "8a0aab96335653bd79bed8a09ffcadd5",
-"/": "8a0aab96335653bd79bed8a09ffcadd5",
-"main.dart.js": "25dc5deb5ac88b20cf7a18d2162d444e",
+"index.html": "8a769d4123f07613668b91c49be9d3e6",
+"/": "8a769d4123f07613668b91c49be9d3e6",
+"main.dart.js": "7fbf0913707aa7e81d93e61df9ab7ccc",
 "manifest.json": "a2603969a23eaf8e0087acb3f6b5ef3f",
-"version.json": "460693c758aff6aa0b6c7fcbf38f91e4"};
+"version.json": "b335d4e6467337aebcd3c45296aa3e0e"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
