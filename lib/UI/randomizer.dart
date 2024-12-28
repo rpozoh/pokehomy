@@ -259,7 +259,6 @@ class _RandomizerState extends State<Randomizer> {
             ),
           ],
         ),
-        const SizedBox(height: 12),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget> [
@@ -272,11 +271,12 @@ class _RandomizerState extends State<Randomizer> {
                 style: TextStyle(color: Colors.black)),
               ),
             ),
+            const SizedBox(height: 5),
             IconButton(
               onPressed: goTwitch,
               icon: const FaIcon(FontAwesomeIcons.twitch),
               iconSize: 20,
-              style: IconButton.styleFrom(fixedSize: const Size(60, 34),backgroundColor: Colors.purpleAccent, side: const BorderSide(width: 1)),
+              style: IconButton.styleFrom(fixedSize: const Size(50, 30),backgroundColor: Colors.purpleAccent, side: const BorderSide(width: 1)),
               tooltip: 'Rphisto en Twitch',
             ),
           ],
@@ -289,8 +289,8 @@ class _RandomizerState extends State<Randomizer> {
     return Column (
       children: <Widget> [
         Container(
-          width: 300,
-          height: 300,
+          width: 250,
+          height: 250,
           margin: const EdgeInsets.symmetric(vertical: 4),
           decoration: BoxDecoration (
             color: teamData['color'],
@@ -301,14 +301,14 @@ class _RandomizerState extends State<Randomizer> {
             fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
           ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 10),
         Stack(
           children: <Widget>[
             // Stroked text as border.
             Text(
               '${teamData['name']}',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 25,
                 foreground: Paint()
                   ..style = PaintingStyle.stroke
                   ..strokeWidth = 8
@@ -319,7 +319,7 @@ class _RandomizerState extends State<Randomizer> {
             Text(
               '${teamData['name']}',
               style: const TextStyle(
-                fontSize: 30,
+                fontSize: 25,
                 color: Color(0xffffcb05),
               ),
             ),

@@ -10,7 +10,7 @@ void showPokemonBanListModal(BuildContext context) {
         Animation<double> secondaryAnimation) {
       return Center(
         child: Container(
-          width: MediaQuery.of(context).size.width * 0.8,
+          width: MediaQuery.of(context).size.width * 0.4,
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -23,7 +23,7 @@ void showPokemonBanListModal(BuildContext context) {
                 children: <Widget>[
                   // Stroked text as border.
                   Text(
-                    'Banea a tú Pokémon favorito',
+                    'Lista de Pokémon',
                     style: TextStyle(
                       fontSize: 30,
                       foreground: Paint()
@@ -34,7 +34,7 @@ void showPokemonBanListModal(BuildContext context) {
                   ),
                   // Solid text as fill.
                   const Text(
-                    'En construcción',
+                    'Lista de Pokémon',
                     style: TextStyle(
                       fontSize: 30,
                       color: Color(0xffffcb05),
@@ -93,7 +93,7 @@ class _PokemonBanListModalState extends State<PokemonBanListModal> {
             Text(
               'Banea a tú Pokémon favorito',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 20,
                 foreground: Paint()
                   ..style = PaintingStyle.stroke
                   ..strokeWidth = 8
@@ -102,9 +102,9 @@ class _PokemonBanListModalState extends State<PokemonBanListModal> {
             ),
             // Solid text as fill.
             const Text(
-              'En construcción',
+              'Banea a tú Pokémon favorito',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 20,
                 color: Color(0xffffcb05),
               ),
             ),
