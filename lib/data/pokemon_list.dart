@@ -219,7 +219,7 @@ final pokemon = [
   }),
   Pokemon({
     "name": "Galarian-Rapidash",
-    "role": "Equilibrado",
+    "role": "Agil",
     "rarity": "Normal",
     "types": "Psíquico/Hada",
     "image": "assets/images/galarian-rapidash.png",

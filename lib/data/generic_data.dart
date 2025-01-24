@@ -14,7 +14,7 @@ var typeList = type;
 var legendaryTag = "Con Legendarios";
 var legendaryTagTrue = "Con Legendarios";
 var legendaryTagFalse = "Sin Legendarios";
-var legendaries = false;
+var legendaries = true;
 
 var eeveeTag = "Eevee: No";
 var eeveeTagTrue = "Eevee: Si";
