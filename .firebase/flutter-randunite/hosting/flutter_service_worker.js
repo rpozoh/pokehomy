@@ -34,7 +34,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "97936924f24e124ffc7900014beaaca1
 "assets/assets/images/eldegoss.png": "7aaf2478e55cd92f9ba2858b50290bd9",
 "assets/assets/images/espeon.png": "672b39295ed3343f61483ba4b83697d5",
 "assets/assets/images/falinks.png": "b795766dec557e61453f7bb2736f5cc1",
-"assets/assets/images/galarian-rapidash.png": "f23065265ac6c13a0d648e177897a030",
+"assets/assets/images/galarian-rapidash.png": "eea0a91f03280ca3771a3bb6b45ec22a",
 "assets/assets/images/garbador.png": "d52f6cdfec136c0f43b19dfbf4abd36f",
 "assets/assets/images/garchomp.png": "b1cd16110dce9050d4b98ce07255c513",
 "assets/assets/images/gardevoir.png": "bdc69a80bbc9d3ba73169c5a5ca6b393",
@@ -100,9 +100,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "97936924f24e124ffc7900014beaaca1
 "icons/Icon-512.png": "325db30d3c7972adc21421357a41c7c5",
 "icons/Icon-maskable-192.png": "8463611bf4d29fe7bfb183f6508b05f4",
 "icons/Icon-maskable-512.png": "325db30d3c7972adc21421357a41c7c5",
-"index.html": "8a769d4123f07613668b91c49be9d3e6",
-"/": "8a769d4123f07613668b91c49be9d3e6",
-"main.dart.js": "7fbf0913707aa7e81d93e61df9ab7ccc",
+"index.html": "b80f4fa937090855dccb353ecc350e9b",
+"/": "b80f4fa937090855dccb353ecc350e9b",
+"main.dart.js": "fb4d635da043d33ae76605fcbbc27b52",
 "manifest.json": "a2603969a23eaf8e0087acb3f6b5ef3f",
 "version.json": "b335d4e6467337aebcd3c45296aa3e0e"};
 // The application shell files that are downloaded before a service worker can

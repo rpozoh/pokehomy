@@ -4,9 +4,12 @@ import 'package:pokehomy/data/pokemon_list.dart';
 import 'package:pokehomy/data/pokemon_role.dart';
 
 void setLegendaryPokemon() {
-  pokemonList = legendaries ? pokemon : pokemonList.where((legendary) => legendary.pokemon['rarity'] == 'Normal' || legendary.pokemon['rarity'] == "Eevee").toList();
-  legendaryTag = legendaries ? legendaryTagTrue : legendaryTagFalse;
-  exColor = legendaries ? Colors.red : Colors.green;
+  if(eevees) {
+    setEeveeTeam();
+  }
+  pokemonList = legendaries ? pokemonList.where((legendary) => legendary.pokemon['rarity'] == 'Normal' || legendary.pokemon['rarity'] == "Eevee").toList() : pokemon;
+  legendaryTag = legendaries ? legendaryTagFalse : legendaryTagTrue;
+  exColor = legendaries ? Colors.green : Colors.red;
   legendaries = legendaries ? false : true;
 }
 
@@ -15,6 +18,10 @@ void setEeveeTeam() {
   eeveeTag = eevees ? eeveeTagFalse : eeveeTagTrue;
   eeveeColor = eevees ? Colors.red : Colors.green;
   eevees = eevees ? false : true;
+  if(!eevees && !legendaries) {
+    legendaries = true;
+    setLegendaryPokemon();
+  }
 }
 
 void setTeamRol() {

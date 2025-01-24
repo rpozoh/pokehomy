@@ -223,7 +223,7 @@ final pokemon = [
     "rarity": "Normal",
     "types": "Psíquico/Hada",
     "image": "assets/images/galarian-rapidash.png",
-    "status": "Baneado",
+    "status": "Disponible",
   }),
   Pokemon({
     "name": "Garchomp",
