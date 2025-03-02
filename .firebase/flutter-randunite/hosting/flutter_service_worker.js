@@ -3,12 +3,14 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "97936924f24e124ffc7900014beaaca1",
-"assets/AssetManifest.bin.json": "60d74ada16cef73432c5f4127208dced",
-"assets/AssetManifest.json": "62b0d7bac2254dad30ad25b95ff9d063",
+const RESOURCES = {"assets/AssetManifest.bin": "06a7c95614a032b2f8b0aa1050fe9563",
+"assets/AssetManifest.bin.json": "c381028add20ad017b9b98cc80990a83",
+"assets/AssetManifest.json": "fcc97fe9a621df009e08ff7fd3778db7",
 "assets/assets/images/absol.png": "f7631e25e8e82e87fa8e0b4b51405610",
 "assets/assets/images/aegislash.png": "3b68de12604e9ebe4217515369b0683a",
+"assets/assets/images/alcremie.png": "e830945fb4dc3f0bdb6c6821f2d4a3da",
 "assets/assets/images/alolan-ninetales.png": "f105988f646c35e2d03a5e84437c64f2",
+"assets/assets/images/alolan-raichu.png": "1fe54c58618f5db889ec931975afbf7b",
 "assets/assets/images/armarouge.png": "ced3bdb58b838ade8f042e140c1eacdd",
 "assets/assets/images/azumarill.png": "cd335627d8af97f13162a95fcde177a3",
 "assets/assets/images/blastoise.png": "7b14b61acc7a840004e9732dceb863cd",
@@ -35,7 +37,6 @@ const RESOURCES = {"assets/AssetManifest.bin": "97936924f24e124ffc7900014beaaca1
 "assets/assets/images/espeon.png": "672b39295ed3343f61483ba4b83697d5",
 "assets/assets/images/falinks.png": "b795766dec557e61453f7bb2736f5cc1",
 "assets/assets/images/galarian-rapidash.png": "eea0a91f03280ca3771a3bb6b45ec22a",
-"assets/assets/images/garbador.png": "d52f6cdfec136c0f43b19dfbf4abd36f",
 "assets/assets/images/garchomp.png": "b1cd16110dce9050d4b98ce07255c513",
 "assets/assets/images/gardevoir.png": "bdc69a80bbc9d3ba73169c5a5ca6b393",
 "assets/assets/images/gengar.png": "784d10afe8f61e895c864b4be11c81af",
@@ -66,6 +67,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "97936924f24e124ffc7900014beaaca1
 "assets/assets/images/scizor.png": "26c8055e185c03bf9fa7488a2844dcb2",
 "assets/assets/images/slowbro.png": "f920ffc7364ec4a5d255aecae4dbed83",
 "assets/assets/images/snorlax.png": "f946c2c109695f5f56b732bddfa2d11e",
+"assets/assets/images/suicune.png": "22d47e186a60988489c50143bb26b5d9",
 "assets/assets/images/sylveon.png": "a8164fb33ae47a569d438917401a4770",
 "assets/assets/images/talonflame.png": "f320928ad3599bfd007053a1e03edc12",
 "assets/assets/images/tinkaton.png": "3c61376bef4339f68675ea7a8ef68ee2",
@@ -100,11 +102,11 @@ const RESOURCES = {"assets/AssetManifest.bin": "97936924f24e124ffc7900014beaaca1
 "icons/Icon-512.png": "325db30d3c7972adc21421357a41c7c5",
 "icons/Icon-maskable-192.png": "8463611bf4d29fe7bfb183f6508b05f4",
 "icons/Icon-maskable-512.png": "325db30d3c7972adc21421357a41c7c5",
-"index.html": "b80f4fa937090855dccb353ecc350e9b",
-"/": "b80f4fa937090855dccb353ecc350e9b",
-"main.dart.js": "fb4d635da043d33ae76605fcbbc27b52",
+"index.html": "9fe36f668f8629478ee1c24c6f019025",
+"/": "9fe36f668f8629478ee1c24c6f019025",
+"main.dart.js": "045e1b05a4650fa9b7ae3c1f3b8d5424",
 "manifest.json": "a2603969a23eaf8e0087acb3f6b5ef3f",
-"version.json": "b335d4e6467337aebcd3c45296aa3e0e"};
+"version.json": "bd1d92a85058535ac5e288af4d76f9e9"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",

@@ -39,7 +39,7 @@ final type = [
       //"name":"Tierra",
       //"name":"Hielo",
       //"name":"Roca",
-      //"name":"Electrico",
+      //"name":"Eléctrico",
       //"name":"Veneno",
       //"name":"Bicho"
   }),
