@@ -39735,7 +39735,7 @@ Rx(a){var s,r=this,q=null
 r.a.toString
 s=r.gWg()
 r.a.toString
-return new A.vy(q,q,q,new A.a2P(),q,q,q,q,q,B.Hd,B.F5,q,q,q,B.CO,r.gWp(),"Randomizer by Rphisto v6.6.6",q,B.K6,B.am,q,s,q,q,B.ke,!1,!1,!1,!1,r.gW0(),!0,q,q,q,new A.l9(r,t.bT))},
+return new A.vy(q,q,q,new A.a2P(),q,q,q,q,q,B.Hd,B.F5,q,q,q,B.CO,r.gWp(),"Randomizer by Rphisto v6.6.8",q,B.K6,B.am,q,s,q,q,B.ke,!1,!1,!1,!1,r.gW0(),!0,q,q,q,new A.l9(r,t.bT))},
 T(a){var s,r=null,q=A.r8(!1,!1,this.Rx(a),r,r,r,r,!0,r,r,new A.a2Q(),r,r,r)
 this.a.toString
 s=this.d
@@ -63654,7 +63654,7 @@ k=A.hF(A.fr(B.N1,k,A.fs(g,g,B.am,B.bs,g,g,g,g,g,g,g,g,g,g,g,B.ap,g,g,g,g)),"Gene
 j=$.eH&&!$.kw?h.ga0D():g
 j=A.hF(A.fr(B.N5,j,A.fs(g,g,B.am,B.bs,g,g,g,g,g,g,g,g,g,g,g,B.ap,g,g,g,g)),"Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro")
 i=$.eH&&!$.kw?h.gMk():g
-return A.Ol(A.a([p,s,q,f,n,m,A.jY(A.a([r,l,k,j,A.hF(A.fr(B.N9,i,A.fs(g,g,B.am,B.bs,g,g,g,g,g,g,g,g,g,g,g,B.ap,g,g,g,g)),"Genera cada equipo con Pok\xe9mon que tengan el mismo tipo")],o),B.cO,B.ax,g),A.jY(A.a([A.hF(A.fr(B.Ne,new A.a3P(a),A.fs(g,g,B.Y,g,g,g,g,g,g,g,g,g,g,g,g,B.ap,g,g,g,g)),"Permite administrar la lista de baneados"),B.IJ,A.a8s(B.AH,20,h.gMi(),g,A.a8t(g,B.Fa,g,g,g,g,B.IE,g,g,g,g,g,g,g,g,B.wm,g),"Rphisto en Twitch")],o),B.cO,B.ax,g)],o),B.dy,B.EN,B.ax)},
+return A.Ol(A.a([p,s,q,f,n,m,A.jY(A.a([r,l,k,j,A.hF(A.fr(B.N9,i,A.fs(g,g,B.am,B.bs,g,g,g,g,g,g,g,g,g,g,g,B.ap,g,g,g,g)),"Genera cada equipo con Pok\xe9mon que tengan el mismo tipo")],o),B.cO,B.ax,g),A.jY(A.a([A.hF(A.fr(B.Ne,new A.a3P(a),A.fs(g,g,B.Y,g,g,g,g,g,g,g,g,g,g,g,g,B.ap,g,g,g,g)),"Permite administrar la lista de baneados"),B.IJ,A.a8s(B.AH,20,h.gMi(),g,A.a8t(g,B.Fa,g,g,g,g,B.IE,g,g,g,g,g,g,g,g,B.wm,g),"Si te ha gustado el Randomizer, puedes apoyarme en Twitch para seguir mejorando")],o),B.cO,B.ax,g)],o),B.dy,B.EN,B.ax)},
 Cy(a){var s,r=null,q=a.k(0,"color"),p=A.Nj(10),o=a.k(0,"image")
 q=A.ee(r,new A.ro(A.anD(r,r,new A.q2(o,r,r)),B.wA,r),r,r,new A.cL(q,r,r,p,r,r,B.ak),250,B.Av,r,250)
 p=A.f(a.k(0,"name"))

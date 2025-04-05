@@ -277,7 +277,7 @@ class _RandomizerState extends State<Randomizer> {
               icon: const FaIcon(FontAwesomeIcons.twitch),
               iconSize: 20,
               style: IconButton.styleFrom(fixedSize: const Size(50, 30),backgroundColor: Colors.purpleAccent, side: const BorderSide(width: 1)),
-              tooltip: 'Rphisto en Twitch',
+              tooltip: 'Si te ha gustado el Randomizer, puedes apoyarme en Twitch para seguir mejorando',
             ),
           ],
         )
