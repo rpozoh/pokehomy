@@ -39,7 +39,7 @@ final pokemon = [
     "rarity": "Normal",
     "types": "Eléctrico/Psíquico",
     "image": "assets/images/alolan-raichu.png",
-    "status": "Baneado",
+    "status": "Disponible",
   }),
   Pokemon({
     "name": "Armarouge",
