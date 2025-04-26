@@ -40,18 +40,18 @@ void setRoleTagTeam(bool allRoleTag, String role) {
   }
 
 Color setColor(String role) {
-  Color color = Colors.white;
+  Color color = const Color.fromARGB(255, 255, 255, 255);
   switch(role) {
     case "Ofensivo":
-      color = Colors.red;
+      color = const Color.fromARGB(255, 255, 17, 0);
     case "Equilibrado":
-      color = Colors.purple;
+      color = const Color.fromARGB(255, 105, 8, 122);
     case "Agil":
-      color = Colors.blue;
+      color = const Color.fromARGB(255, 1, 100, 182);
     case "Defensivo":
-      color = Colors.green;
+      color = const Color.fromARGB(255, 93, 216, 97);
     case "Auxiliar":
-      color = Colors.yellow;
+      color = const Color.fromARGB(255, 255, 235, 59);
     case "Siniestro":
       color = const Color.fromARGB(255, 41, 41, 41);
     case "Acero":
@@ -61,11 +61,11 @@ Color setColor(String role) {
     case "Hada":
       color = const Color.fromARGB(255, 218, 123, 154);
     case "Fuego":
-      color = Colors.red;
+      color = const Color.fromARGB(255, 226, 97, 10);
     case "Psíquico":
       color = const Color.fromARGB(255, 163, 31, 123);
     case "Agua":
-      color = Colors.blue;
+      color = const Color.fromARGB(255, 0, 118, 214);
     case "Lucha":
       color = const Color.fromARGB(255, 134, 45, 12);
     case "Volador":
