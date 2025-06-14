@@ -8,7 +8,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "06a7c95614a032b2f8b0aa1050fe9563
 "assets/AssetManifest.json": "fcc97fe9a621df009e08ff7fd3778db7",
 "assets/assets/images/absol.png": "f7631e25e8e82e87fa8e0b4b51405610",
 "assets/assets/images/aegislash.png": "3b68de12604e9ebe4217515369b0683a",
-"assets/assets/images/alcremie.png": "e830945fb4dc3f0bdb6c6821f2d4a3da",
+"assets/assets/images/alcremie.png": "698d8446a234b491c2e8edaa9fa48958",
 "assets/assets/images/alolan-ninetales.png": "f105988f646c35e2d03a5e84437c64f2",
 "assets/assets/images/alolan-raichu.png": "24e29084d0dd27918db194fd52b4675b",
 "assets/assets/images/armarouge.png": "ced3bdb58b838ade8f042e140c1eacdd",
@@ -102,11 +102,11 @@ const RESOURCES = {"assets/AssetManifest.bin": "06a7c95614a032b2f8b0aa1050fe9563
 "icons/Icon-512.png": "325db30d3c7972adc21421357a41c7c5",
 "icons/Icon-maskable-192.png": "8463611bf4d29fe7bfb183f6508b05f4",
 "icons/Icon-maskable-512.png": "325db30d3c7972adc21421357a41c7c5",
-"index.html": "74cc651e23b9505982144e339db177dd",
-"/": "74cc651e23b9505982144e339db177dd",
-"main.dart.js": "1790183f03b6f9ef834bc7a85d7f8da3",
+"index.html": "a5b772e4f76c434c41bb5a28d85b81bd",
+"/": "a5b772e4f76c434c41bb5a28d85b81bd",
+"main.dart.js": "b8d5c921ec8b41d84803498e0f0500da",
 "manifest.json": "a2603969a23eaf8e0087acb3f6b5ef3f",
-"version.json": "afc53f1281d87b631dbf607226c06479"};
+"version.json": "75627fe3bf3a6e12ca86a6a22941ebd8"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",

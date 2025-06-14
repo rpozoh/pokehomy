@@ -23,7 +23,7 @@ final pokemon = [
     "rarity": "Normal",
     "types": "Hada",
     "image": "assets/images/alcremie.png",
-    "status": "Baneado",
+    "status": "Disponible",
   }),
   Pokemon({
     "name": "Alolan-Ninetales",
