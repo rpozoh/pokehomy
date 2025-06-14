@@ -19,7 +19,7 @@ final pokemon = [
   }),
   Pokemon({
     "name": "Alcremie",
-    "role": "Ofensivo",
+    "role": "Auxiliar",
     "rarity": "Normal",
     "types": "Hada",
     "image": "assets/images/alcremie.png",
