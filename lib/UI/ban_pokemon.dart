@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokehomy/data/pokemon_data_source.dart';
+import 'package:pokehomy/data/generic_data.dart';
 
 void showPokemonBanListModal(BuildContext context) {
   showGeneralDialog(
@@ -74,17 +75,25 @@ void showPokemonBanListModal(BuildContext context) {
 }
 
 class _PokemonBanListModalState extends State<PokemonBanListModal> {
-  late PokemonDataSource _pokemonDataSource;
+  PokemonDataSource? _pokemonDataSource;
+  bool _loading = true;
 
   @override
   void initState() {
     super.initState();
-    _pokemonDataSource = PokemonDataSource();
+    _banList();
+  }
+
+  Future<void> _banList() async {
+    setState(() => _loading = true);
+    final pokemonBanList = await updatePoke();
+    _pokemonDataSource = PokemonDataSource(pokemonBanList, _banList);
+    setState(() => _loading = false);
   }
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return _loading ? const Center(child: CircularProgressIndicator()) : _pokemonDataSource == null ? const Center(child: Text('No se pudieron cargar los datos')) :SingleChildScrollView(
       child: PaginatedDataTable(
         header: 
         Stack(
@@ -116,7 +125,7 @@ class _PokemonBanListModalState extends State<PokemonBanListModal> {
           DataColumn(label: Text("Estado", style: TextStyle(fontWeight: FontWeight.bold))),
           DataColumn(label: Text("Banear", style: TextStyle(fontWeight: FontWeight.bold))),
         ],
-        source: _pokemonDataSource,
+        source: _pokemonDataSource!,
         rowsPerPage: 10,
         columnSpacing: 20,
         showCheckboxColumn: true,

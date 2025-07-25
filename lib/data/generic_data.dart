@@ -4,8 +4,29 @@ import 'package:pokehomy/data/pokemon_list.dart';
 import 'package:pokehomy/data/pokemon_team.dart';
 import 'package:pokehomy/data/pokemon_role.dart';
 import 'package:pokehomy/data/pokemon_type.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:pokehomy/models/pokemon.dart';
 
 final randomizer = Random();
+Future<List<Map<String, dynamic>>> pokemonListSnapshot() async {
+  final pokemonSnapshot = await FirebaseFirestore.instance.collection('pokemon').get();
+  return pokemonSnapshot.docs.map((doc) => doc.data()).toList();
+}
+Future<List<Map<String, dynamic>>> roleListSnapshot() async {
+  final roleSnapshot = await FirebaseFirestore.instance.collection('roles').get();
+  return roleSnapshot.docs.map((doc) => doc.data()).toList();
+}
+Future<List<Map<String, dynamic>>> typeListSnapshot() async {
+  final typeSnapshot = await FirebaseFirestore.instance.collection('types').get();
+  return typeSnapshot.docs.map((doc) => doc.data()).toList();
+}
+
+Future updatePoke() async {
+  final pokeUpdateSnapshot = await FirebaseFirestore.instance.collection('pokemon').get();
+  final pokeUpdate = pokeUpdateSnapshot.docs.map((doc) => Poke.fromSnapshot(doc)).toList();
+  return pokeUpdate;
+}
+
 var pokemonList = pokemon;
 var pokemonTeam = team;
 var roleList = role;

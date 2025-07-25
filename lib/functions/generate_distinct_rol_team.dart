@@ -2,37 +2,46 @@ import 'package:pokehomy/functions/set_teams.dart';
 import 'package:pokehomy/functions/generics.dart';
 import 'package:pokehomy/data/generic_data.dart';
 
-import 'package:pokehomy/models/pokemon_list.dart';
-
-void generateDistinctRolTeam() {
+Future generateDistinctRolTeam() async {
+  var pokemonList = await pokemonListSnapshot();
+  final roleList = await roleListSnapshot();
   setRoleTagTeam(false, "");
   final roleTeams = <int>{};
   final pokemonTeamA = <int>{};
   final pokemonTeamB = <int>{};
+  final pokemonTeam = <int>{};
   int randomRole = 0;
+
+  if(!legendaries) {
+    pokemonList = pokemonList.where((legendary) => legendary['poke_rarity'] == 'Normal' || legendary['poke_rarity'] == "Eevee").toList();
+  }
+
   while(roleTeams.length < 2) {
     roleTeams.add(randomizer.nextInt(roleList.length));
   }
-  teamPurpleTag = roleList[roleTeams.first].role['name']!;
-  teamOrangeTag = roleList[roleTeams.last].role['name']!;
+  teamPurpleTag = roleList[roleTeams.first]['role_name']!;
+  teamOrangeTag = roleList[roleTeams.last]['role_name']!;
 
-  List<Pokemon> pokemonRole = pokemonList.where((pokemonList) => pokemonList.pokemon['role'].toLowerCase() == teamPurpleTag.toLowerCase()).toList();
+  final pokemonRoleA = pokemonList.where((pokemonDataList) => pokemonDataList['poke_role'].toLowerCase() == teamPurpleTag.toLowerCase()).toList();
+  final pokemonRoleB = pokemonList.where((pokemonDataList) => pokemonDataList['poke_role'].toLowerCase() == teamOrangeTag.toLowerCase()).toList();
 
   while(pokemonTeamA.length < 5) {
-    randomRole = randomizer.nextInt(pokemonRole.length);
-    if(setTeams(pokemonRole[randomRole].pokemon)) {
+    randomRole = randomizer.nextInt(pokemonRoleA.length);
+    if(setTeams(pokemonRoleA[randomRole])) {
       pokemonTeamA.add(randomRole);
-      setTeamPoke(pokemonRole[pokemonTeamA.last].pokemon, pokemonTeamA.length - 1);
+      pokemonTeam.add(randomRole);
+      setTeamPoke(pokemonRoleA[pokemonTeamA.last], pokemonTeamA.length - 1);
     }
   }
-
-  pokemonRole = pokemonList.where((pokemonList) => pokemonList.pokemon['role'].toLowerCase() == teamOrangeTag.toLowerCase()).toList();
 
   while(pokemonTeamB.length < 5) {
-    randomRole = randomizer.nextInt(pokemonRole.length);
-    if(setTeams(pokemonRole[randomRole].pokemon)) {
+    randomRole = randomizer.nextInt(pokemonRoleB.length);
+    if(setTeams(pokemonRoleB[randomRole])) {
       pokemonTeamB.add(randomRole);
-      setTeamPoke(pokemonRole[pokemonTeamB.last].pokemon, pokemonTeamB.length + 4);
+      pokemonTeam.add(randomRole);
+      setTeamPoke(pokemonRoleB[pokemonTeamB.last], pokemonTeamB.length + 4);
     }
   }
+
+  return pokemonTeam;
 }

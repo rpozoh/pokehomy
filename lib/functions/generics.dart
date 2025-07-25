@@ -7,14 +7,12 @@ void setLegendaryPokemon() {
   if(eevees) {
     setEeveeTeam();
   }
-  pokemonList = legendaries ? pokemonList.where((legendary) => legendary.pokemon['rarity'] == 'Normal' || legendary.pokemon['rarity'] == "Eevee").toList() : pokemon;
   legendaryTag = legendaries ? legendaryTagFalse : legendaryTagTrue;
   exColor = legendaries ? Colors.green : Colors.red;
   legendaries = legendaries ? false : true;
 }
 
 void setEeveeTeam() {
-  pokemonList = eevees ? pokemon : pokemonList.where((eevee) => eevee.pokemon['rarity'] == 'Eevee').toList();
   eeveeTag = eevees ? eeveeTagFalse : eeveeTagTrue;
   eeveeColor = eevees ? Colors.red : Colors.green;
   eevees = eevees ? false : true;
@@ -46,7 +44,7 @@ Color setColor(String role) {
       color = const Color.fromARGB(255, 255, 17, 0);
     case "Equilibrado":
       color = const Color.fromARGB(255, 105, 8, 122);
-    case "Agil":
+    case "Ágil":
       color = const Color.fromARGB(255, 1, 100, 182);
     case "Defensivo":
       color = const Color.fromARGB(255, 93, 216, 97);

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pokehomy/UI/ban_pokemon.dart';
 import 'package:pokehomy/data/generic_data.dart';
@@ -9,6 +8,7 @@ import 'package:pokehomy/functions/generate_no_repeat_team.dart';
 import 'package:pokehomy/functions/generate_distinct_rol_team.dart';
 import 'package:pokehomy/functions/generate_same_type_team.dart';
 import 'package:pokehomy/functions/generics.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Randomizer extends StatefulWidget {
   const Randomizer({super.key});
@@ -22,58 +22,82 @@ class Randomizer extends StatefulWidget {
 class _RandomizerState extends State<Randomizer> {
 
   final Uri _url = Uri.parse('https://www.twitch.tv/rphisto');
+  bool _loading = false;
 
-  void random() {
+  Future random() async {
+    setState(() => _loading = true);
+    final pokemonTeam = await generateRandomTeam();
     setState(() {
-      generateRandomTeam();
+      pokemonTeam;
+      _loading = false;
     });
   }
 
-  void randomNoRepeat() {
+  Future randomNoRepeat() async {
+    setState(() => _loading = true);
+    final pokemonTeam = await generateRandomNoRepeat();
     setState(() {
-      generateRandomNoRepeat();
+      pokemonTeam;
+      _loading = false;
     });
   }
 
-  void fullteam() {
+  Future fullteam() async {
+    setState(() => _loading = true);
+    final pokemonTeam = await generateFullteam();
     setState(() {
-      generateFullteam();
+      pokemonTeam;
+      _loading = false;
     });
   }
 
-  void distinctRol() {
+  Future distinctRol() async {
+    setState(() => _loading = true);
+    final pokemonTeam = await generateDistinctRolTeam();
     setState(() {
-      generateDistinctRolTeam();
+      pokemonTeam;
+      _loading = false;
     });
   }
 
-  void sameTypeTeam() {
+  Future sameTypeTeam() async {
+    setState(() => _loading = true);
+    final pokemonTeam = await generateSameTypeTeam();
     setState(() {
-      generateSameTypeTeam();
+      pokemonTeam;
+      _loading = false;
     });
   }
 
   void reOrder() {
     setState(() {
+      _loading = true;
       reOrderTeams();
+      _loading = false;
     });
   }
 
   void setLegends() {
     setState(() {
+      _loading = true;
       setLegendaryPokemon();
+      _loading = false;
     });
   }
 
   void setEevees() {
     setState(() {
+      _loading = true;
       setEeveeTeam();
+      _loading = false;
     });
   }
 
-  void setRol() {
+  void setRol()  {
     setState(() {
+      _loading = true;
       setTeamRol();
+      _loading = false;
     });
   }
 
@@ -85,7 +109,7 @@ class _RandomizerState extends State<Randomizer> {
 
   @override
   Widget build(context) {
-    return Column(
+    return _loading ? const Center(child: CircularProgressIndicator()) : Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget> [
         Row(
@@ -94,8 +118,8 @@ class _RandomizerState extends State<Randomizer> {
             Tooltip (
               message: 'Habilita/Deshabilita los Pokémon legendarios',
               child: OutlinedButton (
-                onPressed: setLegends,
-                style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3)),
+                onPressed: !eevees ? setLegends : null,
+                style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: Text(legendaryTag,
                 style: const TextStyle(color: Colors.black)),
               ),
@@ -296,7 +320,7 @@ class _RandomizerState extends State<Randomizer> {
             color: teamData['color'],
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Image.asset (
+          child: Image.network (
             teamData['image'],
             fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
           ),

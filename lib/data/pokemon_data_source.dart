@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pokehomy/data/generic_data.dart';
 import 'package:pokehomy/functions/ban_pokemon.dart';
-import 'package:pokehomy/models/pokemon_list.dart';
+import 'package:pokehomy/models/pokemon.dart';
 
 class PokemonDataSource extends DataTableSource {
-  final List<Pokemon> pokemonDataSource = pokemonList;
+  final List<Poke> pokemonDataSource;
+  final VoidCallback onRefresh;
+
+  PokemonDataSource(this.pokemonDataSource, this.onRefresh);
 
   @override
   DataRow? getRow(int index) {
@@ -12,21 +15,24 @@ class PokemonDataSource extends DataTableSource {
     final pokemon = pokemonDataSource[index];
     return DataRow(
       cells: [
-        DataCell(Text(pokemon.pokemon['name'])),
-        DataCell(Text(pokemon.pokemon['status'])),
+        DataCell(Text(pokemon.nombre)),
+        DataCell(Text(pokemon.estatus ? 'Disponible' : "Baneado")),
         DataCell(OutlinedButton(
-            onPressed: () => _updateValue(index),
-            style: OutlinedButton.styleFrom(backgroundColor: pokemon.pokemon['status'] == 'Disponible' ? banButtonColor : disbanButtonColor, side: const BorderSide(width: 3)),
-            child: Text(pokemon.pokemon['status'] == 'Disponible' ? banButtonTag : disbanButtonTag, style: const TextStyle(color: Colors.black)),
+            onPressed: () {
+              _updateValue(pokemon);
+              onRefresh();
+            },
+            style: OutlinedButton.styleFrom(backgroundColor: pokemon.estatus ? banButtonColor : disbanButtonColor, side: const BorderSide(width: 3)),
+            child: Text(pokemon.estatus ? banButtonTag : disbanButtonTag, style: const TextStyle(color: Colors.black)),
           ),
         ),
       ],
     );
   }
 
-  void _updateValue(int index) {
-    banPokemon(index);
-    notifyListeners(); // Notifica al widget que los datos han cambiado
+  void _updateValue(Poke pokemon) async {
+    banPokemon(pokemon);
+    //notifyListeners(); // Notifica al widget que los datos han cambiado
   }
 
   @override

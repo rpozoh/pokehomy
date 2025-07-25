@@ -2,37 +2,49 @@ import 'package:pokehomy/functions/set_teams.dart';
 import 'package:pokehomy/functions/generics.dart';
 import 'package:pokehomy/data/generic_data.dart';
 
-import 'package:pokehomy/models/pokemon_list.dart';
-
-void generateSameTypeTeam() {
-  setRoleTagTeam(false, "");
+Future generateSameTypeTeam() async {
+  var pokemonList = await pokemonListSnapshot();
+  final typeList = await typeListSnapshot();
   final typeTeams = <int>{};
   final pokemonTeamA = <int>{};
   final pokemonTeamB = <int>{};
+  final pokemonTeam = <int>{};
+  final pokeTypes = typeList.where((typeData) => typeData['type_count'] >= 5).toList();
+
   int randomType = 0;
-  while(typeTeams.length < 2) {
-    typeTeams.add(randomizer.nextInt(typeList.length));
+
+  if(!legendaries) {
+    pokemonList = pokemonList.where((legendary) => legendary['poke_rarity'] == 'Normal' || legendary['poke_rarity'] == "Eevee").toList();
   }
-  teamPurpleTag = typeList[typeTeams.first].type['name']!;
-  teamOrangeTag = typeList[typeTeams.last].type['name']!;
 
-  List<Pokemon> pokemonType = pokemonList.where((pokemonList) => pokemonList.pokemon['types'].toLowerCase().contains(teamPurpleTag.toLowerCase())).toList();
+  setRoleTagTeam(false, "");
 
+  while(typeTeams.length < 2) {
+    typeTeams.add(randomizer.nextInt(pokeTypes.length));
+  }
+
+  teamPurpleTag = pokeTypes[typeTeams.first]['type_name'];
+  teamOrangeTag = pokeTypes[typeTeams.last]['type_name'];
+
+  final pokemonTypeA = pokemonList.where((pokemonDataList) => pokemonDataList['poke_types'].toLowerCase().contains(teamPurpleTag.toLowerCase())).toList();
+  final pokemonTypeB = pokemonList.where((pokemonDataList) => pokemonDataList['poke_types'].toLowerCase().contains(teamOrangeTag.toLowerCase())).toList();
+  
   while(pokemonTeamA.length < 5) {
-    randomType = randomizer.nextInt(pokemonType.length);
-    if(setTeams(pokemonType[randomType].pokemon)) {
+    randomType = randomizer.nextInt(pokemonTypeA.length);
+    if(setTeams(pokemonTypeA[randomType])) {
       pokemonTeamA.add(randomType);
-      setTeamPoke(pokemonType[pokemonTeamA.last].pokemon, pokemonTeamA.length - 1);
+      pokemonTeam.add(randomType);
+      setTeamPoke(pokemonTypeA[pokemonTeamA.last], pokemonTeamA.length - 1);
     }
   }
-
-  pokemonType = pokemonList.where((pokemonList) => pokemonList.pokemon['types'].toLowerCase().contains(teamOrangeTag.toLowerCase())).toList();
 
   while(pokemonTeamB.length < 5) {
-    randomType = randomizer.nextInt(pokemonType.length);
-    if(setTeams(pokemonType[randomType].pokemon)) {
+    randomType = randomizer.nextInt(pokemonTypeB.length);
+    if(setTeams(pokemonTypeB[randomType])) {
       pokemonTeamB.add(randomType);
-      setTeamPoke(pokemonType[pokemonTeamB.last].pokemon, pokemonTeamB.length + 4);
+      pokemonTeam.add(randomType);
+      setTeamPoke(pokemonTypeB[pokemonTeamB.last], pokemonTeamB.length + 4);
     }
   }
+  return pokemonTeamA;
 }
