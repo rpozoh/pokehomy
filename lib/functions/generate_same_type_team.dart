@@ -14,7 +14,7 @@ Future generateSameTypeTeam() async {
   int randomType = 0;
 
   if(!legendaries) {
-    pokemonList = pokemonList.where((legendary) => legendary['poke_rarity'] == 'Normal' || legendary['poke_rarity'] == "Eevee").toList();
+    pokemonList = pokemonList.where((pokemonDataList) => pokemonDataList['poke_rarity'] == 'Normal' || pokemonDataList['poke_rarity'] == "Eevee").toList();
   }
 
   setRoleTagTeam(false, "");

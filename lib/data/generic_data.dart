@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:pokehomy/data/pokemon_list.dart';
 import 'package:pokehomy/data/pokemon_team.dart';
-import 'package:pokehomy/data/pokemon_role.dart';
-import 'package:pokehomy/data/pokemon_type.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pokehomy/models/pokemon.dart';
 
@@ -27,10 +24,7 @@ Future updatePoke() async {
   return pokeUpdate;
 }
 
-var pokemonList = pokemon;
 var pokemonTeam = team;
-var roleList = role;
-var typeList = type;
 
 var legendaryTag = "Con Legendarios";
 var legendaryTagTrue = "Con Legendarios";

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pokehomy/UI/ban_pokemon.dart';
+import 'package:pokehomy/UI/loading.dart';
 import 'package:pokehomy/data/generic_data.dart';
 import 'package:pokehomy/functions/generate_full_team.dart';
 import 'package:pokehomy/functions/random_team.dart';
@@ -93,11 +94,9 @@ class _RandomizerState extends State<Randomizer> {
     });
   }
 
-  void setRol()  {
+  void setRol() async {
     setState(() {
-      _loading = true;
       setTeamRol();
-      _loading = false;
     });
   }
 
@@ -109,7 +108,7 @@ class _RandomizerState extends State<Randomizer> {
 
   @override
   Widget build(context) {
-    return _loading ? const Center(child: CircularProgressIndicator()) : Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget> [
         Row(
@@ -320,7 +319,7 @@ class _RandomizerState extends State<Randomizer> {
             color: teamData['color'],
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Image.network (
+          child: _loading ? const Center(child: PokeballLoading(size: 100)) : Image.network (
             teamData['image'],
             fit: BoxFit.fill, // Ajusta la imagen al tamaño del contenedor
           ),

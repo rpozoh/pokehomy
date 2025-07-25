@@ -5,7 +5,7 @@ final role = [
       "name":"Ofensivo",
   }),
   Role({
-      "name":"Agil",
+      "name":"Ágil",
   }),
   Role({
       "name":"Equilibrado",

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pokehomy/data/generic_data.dart';
-import 'package:pokehomy/data/pokemon_list.dart';
-import 'package:pokehomy/data/pokemon_role.dart';
 
 void setLegendaryPokemon() {
   if(eevees) {
@@ -22,20 +20,21 @@ void setEeveeTeam() {
   }
 }
 
-void setTeamRol() {
-  int roleSelected = allRole ? randomizer.nextInt(role.length) : 1;
-  selectRole = allRole ? roleList[roleSelected].role['name']! : "Todos";
-  roleTag = allRole ? 'Rol: ${roleList[roleSelected].role['name']}' : 'Rol: Todos';
-  roleColor = allRole ? setColor(roleList[roleSelected].role['name'].toString()) : Colors.lime;
-  pokemonList = allRole ? pokemonList.where((role) => role.pokemon['role'] == roleList[roleSelected].role['name']).toList() : pokemon;
-  allRole = allRole ? false : true;
-  setRoleTagTeam(allRole, selectRole);
+Future setTeamRol() async {
+  var roleList = await roleListSnapshot();
+  int roleSelected = randomizer.nextInt(roleList.length);
+  roleList = allRole ? roleList.where((roleDataList) => roleDataList['role_name'] == roleList[roleSelected]['role_name']).toList() : await roleListSnapshot();
+  roleTag = allRole ? 'Rol: ${roleList[0]['role_name']}' : "Rol: Todos";
+  roleColor = allRole ? setColor(roleList[0]['role_name'].toString()) : Colors.lime;
+  setRoleTagTeam(allRole, roleList[0]['role_name']);
+  allRole = !allRole;
+  return allRole;
 }
 
 void setRoleTagTeam(bool allRoleTag, String role) {
-  teamPurpleTag = allRoleTag ? "" : role;
-  teamOrangeTag = allRoleTag ? "" : role;
-  }
+  teamPurpleTag = allRoleTag ? role : "";
+  teamOrangeTag = allRoleTag ? role : "";
+}
 
 Color setColor(String role) {
   Color color = const Color.fromARGB(255, 255, 255, 255);
