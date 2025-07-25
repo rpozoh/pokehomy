@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "firebase": "^10.12.4",
-    "font_awesome_flutter": "^10.7.0"
+    "firebase": "^10.14.1"
   }
 }

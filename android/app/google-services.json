@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "607716932889",
+    "project_id": "flutter-randunite",
+    "storage_bucket": "flutter-randunite.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607716932889:android:b313caf20c134f5f07d988",
+        "android_client_info": {
+          "package_name": "com.example.pokehomy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqXdaALK-w145-iCjFsX3aaW4_f8ILQJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
