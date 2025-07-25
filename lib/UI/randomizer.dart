@@ -322,7 +322,7 @@ class _RandomizerState extends State<Randomizer> {
           ),
           child: Image.network (
             teamData['image'],
-            fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
+            fit: BoxFit.fill, // Ajusta la imagen al tamaño del contenedor
           ),
         ),
         const SizedBox(height: 10),
