@@ -19,7 +19,7 @@ Future<List<Map<String, dynamic>>> typeListSnapshot() async {
 }
 
 Future updatePoke() async {
-  final pokeUpdateSnapshot = await FirebaseFirestore.instance.collection('pokemon').get();
+  final pokeUpdateSnapshot = await FirebaseFirestore.instance.collection('pokemon').orderBy('poke_name').get();
   final pokeUpdate = pokeUpdateSnapshot.docs.map((doc) => Poke.fromSnapshot(doc)).toList();
   return pokeUpdate;
 }
