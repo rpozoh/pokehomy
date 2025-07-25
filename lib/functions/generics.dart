@@ -69,7 +69,7 @@ Color setColor(String role) {
       color = const Color.fromARGB(255, 96, 141, 192);
     case "Planta":
       color = const Color.fromARGB(255, 1, 99, 9);
-    case "Dragon":
+    case "Dragón":
       color = const Color.fromARGB(255, 17, 11, 85);
   }
   return color;
