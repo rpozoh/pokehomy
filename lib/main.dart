@@ -21,7 +21,7 @@ void main() async {
       home: Scaffold(
         body: GradientContainer(Alignment.topCenter, Alignment.bottomCenter, [Color.fromARGB(255, 43, 1, 116), Color.fromARGB(255, 247, 148, 1)]),
       ),
-      title: 'Randomizer by Rphisto v7.0.4',
+      title: 'Randomizer by Rphisto v7.0.5',
     ),
   );
 }

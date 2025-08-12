@@ -16,14 +16,14 @@ class PokemonDataSource extends DataTableSource {
     return DataRow(
       cells: [
         DataCell(Text(pokemon.nombre)),
-        DataCell(Text(pokemon.estatus ? 'Disponible' : "Baneado")),
+        DataCell(Text(pokemon.estado ? 'Disponible' : "Baneado")),
         DataCell(OutlinedButton(
             onPressed: () {
               _updateValue(pokemon);
               onRefresh();
             },
-            style: OutlinedButton.styleFrom(backgroundColor: pokemon.estatus ? banButtonColor : disbanButtonColor, side: const BorderSide(width: 3)),
-            child: Text(pokemon.estatus ? banButtonTag : disbanButtonTag, style: const TextStyle(color: Colors.black)),
+            style: OutlinedButton.styleFrom(backgroundColor: pokemon.estado ? banButtonColor : disbanButtonColor, side: const BorderSide(width: 3)),
+            child: Text(pokemon.estado ? banButtonTag : disbanButtonTag, style: const TextStyle(color: Colors.black)),
           ),
         ),
       ],

@@ -116,6 +116,10 @@ class _RandomizerState extends State<Randomizer> {
           children: <Widget> [
             Tooltip (
               message: 'Habilita/Deshabilita los Pokémon legendarios',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: !eevees ? setLegends : null,
                 style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -125,6 +129,10 @@ class _RandomizerState extends State<Randomizer> {
             ),
             Tooltip (
               message: 'Genera equipo solo de Eevolutions',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: allRole ? setEevees : null,
                 style: OutlinedButton.styleFrom(backgroundColor: eeveeColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -134,6 +142,10 @@ class _RandomizerState extends State<Randomizer> {
             ),
             Tooltip (
               message: 'Reordena los equipos con los Pokémon en pantalla',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: allRole ? reOrder : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -143,6 +155,10 @@ class _RandomizerState extends State<Randomizer> {
             ),
             Tooltip (
               message: 'Define el rol de los Pokémon que usaran ambos equipos',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: !eevees ? setRol: null,
                 style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -237,6 +253,10 @@ class _RandomizerState extends State<Randomizer> {
           children: <Widget> [
             Tooltip(
               message: 'Genera los equipos con cualquier Pokémon disponible',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton(
                 onPressed: random,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3)),
@@ -246,6 +266,10 @@ class _RandomizerState extends State<Randomizer> {
             ),
             Tooltip(
               message: 'Genera los equipos sin repetir Pokémon de un equipo a otro',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: (selectRole == 'Auxiliar' || selectRole == 'Agil' || eevees) ? null : randomNoRepeat,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -255,6 +279,10 @@ class _RandomizerState extends State<Randomizer> {
             ),
             Tooltip(
               message: 'Genera los equipos con un Pokémon de cada rol en cada equipo',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: (allRole && !eevees) ? fullteam : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -264,6 +292,10 @@ class _RandomizerState extends State<Randomizer> {
             ),
             Tooltip(
               message: 'Genera cada equipo con solo un rol, puede variar el rol de un equipo a otro',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: (allRole && !eevees) ? distinctRol : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -273,6 +305,10 @@ class _RandomizerState extends State<Randomizer> {
             ),
             Tooltip(
               message: 'Genera cada equipo con Pokémon que tengan el mismo tipo',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: (allRole && !eevees) ? sameTypeTeam : null,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
@@ -287,6 +323,10 @@ class _RandomizerState extends State<Randomizer> {
           children: <Widget> [
             Tooltip(
               message: 'Permite administrar la lista de baneados',
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(colors: tooltipColor),
+                shape: const StadiumBorder(),
+              ),
               child: OutlinedButton (
                 onPressed: () => showPokemonBanListModal(context),
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.red, side: const BorderSide(width: 3)),
@@ -311,16 +351,22 @@ class _RandomizerState extends State<Randomizer> {
   Widget _buildImageWithText(var teamData) {
     return Column (
       children: <Widget> [
-        Container(
-          width: 250,
-          height: 250,
+        AnimatedContainer(
+          duration: const Duration(seconds: 2),
+          curve: Curves.fastOutSlowIn,
+          width: 250.0,
+          height: 250.0,
           margin: const EdgeInsets.symmetric(vertical: 4),
           decoration: BoxDecoration (
             color: teamData['color'],
             borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: Colors.black, width: 3.0),
+            boxShadow: [BoxShadow(color: teamData['color'], blurRadius: 10.0, spreadRadius: 10.0, offset: const Offset(5.0, 5.0))]
           ),
-          child: _loading ? const Center(child: PokeballLoading(size: 100)) : Image.network (
-            teamData['image'],
+          child: _loading ? const Center(child: PokeballLoading(size: 100)) : FadeInImage.assetNetwork (
+            fadeInCurve: Curves.easeInCirc,
+            placeholder: 'assets/images/pokeball.png',
+            image: teamData['image'],
             fit: BoxFit.fill, // Ajusta la imagen al tamaño del contenedor
           ),
         ),

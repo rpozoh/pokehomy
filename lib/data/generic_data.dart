@@ -56,3 +56,5 @@ Color eeveeColor = Colors.red;
 Color currentBanButtonColor = Colors.red;
 Color banButtonColor = Colors.red;
 Color disbanButtonColor = Colors.green;
+
+List<Color> tooltipColor = [Colors.lightBlue, Colors.deepOrange];

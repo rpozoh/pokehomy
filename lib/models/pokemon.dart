@@ -3,12 +3,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Poke {
   final String id; // ← document ID
   final String nombre;
-  final bool estatus;
+  final bool estado;
 
   Poke({
     required this.id,
     required this.nombre,
-    required this.estatus,
+    required this.estado,
   });
 
   factory Poke.fromSnapshot(DocumentSnapshot doc) {
@@ -16,7 +16,7 @@ class Poke {
     return Poke(
       id: doc.id, // ← Aquí guardas el ID
       nombre: data['poke_name'] ?? '',
-      estatus: data['poke_available'] ?? true,
+      estado: data['poke_available'] ?? true,
     );
   }
 }
