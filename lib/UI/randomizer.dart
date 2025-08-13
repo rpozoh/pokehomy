@@ -361,7 +361,7 @@ class _RandomizerState extends State<Randomizer> {
             color: teamData['color'],
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: Colors.black, width: 3.0),
-            boxShadow: [BoxShadow(color: teamData['color'], blurRadius: 10.0, spreadRadius: 10.0, offset: const Offset(5.0, 5.0))]
+            boxShadow: [BoxShadow(color: teamData['color'], blurRadius: 5.0, spreadRadius: 5.0, offset: const Offset(15.0, 15.0))]
           ),
           child: _loading ? const Center(child: PokeballLoading(size: 100)) : FadeInImage.assetNetwork (
             fadeInCurve: Curves.easeInCirc,
