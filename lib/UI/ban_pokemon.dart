@@ -49,6 +49,29 @@ void showPokemonBanListModal(BuildContext context) {
                 width: 400,
                 child: PokemonBanListModal(),
               )),
+              Stack(
+                children: <Widget>[
+                  // Stroked text as border.
+                  Text(
+                    'Recuerda desbanear a los Pokémon baneados antes de cerrar la aplicación',
+                    style: TextStyle(
+                      fontSize: 18,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 8
+                        ..color = const Color(0xff3c5aa6),
+                    ),
+                  ),
+                  // Solid text as fill.
+                  const Text(
+                    'Recuerda desbanear a los Pokémon baneados antes de cerrar la aplicación',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Color(0xffffcb05),
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () => Navigator.of(context).pop(),
