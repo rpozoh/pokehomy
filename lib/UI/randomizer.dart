@@ -6,6 +6,7 @@ import 'package:pokehomy/data/generic_data.dart';
 import 'package:pokehomy/functions/generate_full_team.dart';
 import 'package:pokehomy/functions/random_team.dart';
 import 'package:pokehomy/functions/generate_no_repeat_team.dart';
+import 'package:pokehomy/functions/generate_same_rol_team.dart';
 import 'package:pokehomy/functions/generate_distinct_rol_team.dart';
 import 'package:pokehomy/functions/generate_same_type_team.dart';
 import 'package:pokehomy/functions/generics.dart';
@@ -94,9 +95,12 @@ class _RandomizerState extends State<Randomizer> {
     });
   }
 
-  void setRol() async {
+  Future setRol() async {
+    setState(() => _loading = true);
+    final pokemonTeam = await generateSameRolTeam();
     setState(() {
-      setTeamRol();
+      pokemonTeam;
+      _loading = false;
     });
   }
 
@@ -160,7 +164,7 @@ class _RandomizerState extends State<Randomizer> {
                 shape: const StadiumBorder(),
               ),
               child: OutlinedButton (
-                onPressed: !eevees ? setRol: null,
+                onPressed: setRol,
                 style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: Text(roleTag,
                 style: const TextStyle(color: Colors.black)),

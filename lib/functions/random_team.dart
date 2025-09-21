@@ -38,7 +38,6 @@ Future generateRandomTeam() async {
       setTeamPoke(pokemonList[pokemonTeamB.last], pokemonTeamB.length + 4);
     }
   }
-  if(!allRole) setTeamRol();
 
   return pokemonTeam;
 }

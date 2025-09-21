@@ -20,15 +20,9 @@ void setEeveeTeam() {
   }
 }
 
-Future setTeamRol() async {
-  var roleList = await roleListSnapshot();
-  int roleSelected = randomizer.nextInt(roleList.length);
-  roleList = allRole ? roleList.where((roleDataList) => roleDataList['role_name'] == roleList[roleSelected]['role_name']).toList() : await roleListSnapshot();
-  roleTag = allRole ? 'Rol: ${roleList[0]['role_name']}' : "Rol: Todos";
-  roleColor = allRole ? setColor(roleList[0]['role_name'].toString()) : Colors.lime;
-  setRoleTagTeam(allRole, roleList[0]['role_name']);
-  allRole = !allRole;
-  return allRole;
+Future setTeamRol(String roleName) async {
+  roleTag = allRole ? roleName : "Rol: Todos";
+  roleColor = allRole ? setColor(roleName) : Colors.lime;
 }
 
 void setRoleTagTeam(bool allRoleTag, String role) {
@@ -71,6 +65,8 @@ Color setColor(String role) {
       color = const Color.fromARGB(255, 1, 99, 9);
     case "Dragón":
       color = const Color.fromARGB(255, 17, 11, 85);
+    case "Eléctrico":
+      color = const Color.fromARGB(255, 255, 235, 59);
   }
   return color;
 }
