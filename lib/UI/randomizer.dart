@@ -166,8 +166,8 @@ class _RandomizerState extends State<Randomizer> {
               child: OutlinedButton (
                 onPressed: setRol,
                 style: OutlinedButton.styleFrom(backgroundColor: roleColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
-                child: Text(roleTag,
-                style: const TextStyle(color: Colors.black)),
+                child: const Text('Mismo Rol',
+                style: TextStyle(color: Colors.black)),
               ),
             ),
           ],
