@@ -12,13 +12,8 @@ Future generateRandomTeam() async {
   final pokemonTeam = <int>{};
   int randomTeam = 0;
 
-  if(eevees) {
-    pokemonList = pokemonList.where((pokemonDataList) => pokemonDataList['poke_rarity'] == 'Eevee').toList();
-  } else if(!legendaries) {
+  if(!legendaries) {
     pokemonList = pokemonList.where((pokemonDataList) => pokemonDataList['poke_rarity'] == 'Normal' || pokemonDataList['poke_rarity'] == "Eevee").toList();
-  }
-  if(!allRole) {
-    pokemonList = pokemonList.where((pokemonDataList) => pokemonDataList['poke_role'] == selectRole).toList();
   }
   
   while(pokemonTeamA.length < 5) {

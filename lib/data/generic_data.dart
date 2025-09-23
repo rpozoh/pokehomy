@@ -31,13 +31,6 @@ var legendaryTagTrue = "Con Legendarios";
 var legendaryTagFalse = "Sin Legendarios";
 var legendaries = true;
 
-var eeveeTag = "Eevee: No";
-var eeveeTagTrue = "Eevee: Si";
-var eeveeTagFalse = "Eevee: No";
-var eevees = false;
-
-var roleTag = "Rol: Todos";
-var selectRole = "Todos";
 var allRole = true;
 
 var teamPurpleTag = "";

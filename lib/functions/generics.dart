@@ -2,26 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pokehomy/data/generic_data.dart';
 
 void setLegendaryPokemon() {
-  if(eevees) {
-    setEeveeTeam();
-  }
   legendaryTag = legendaries ? legendaryTagFalse : legendaryTagTrue;
   exColor = legendaries ? Colors.green : Colors.red;
   legendaries = legendaries ? false : true;
 }
 
-void setEeveeTeam() {
-  eeveeTag = eevees ? eeveeTagFalse : eeveeTagTrue;
-  eeveeColor = eevees ? Colors.red : Colors.green;
-  eevees = eevees ? false : true;
-  if(!eevees && !legendaries) {
-    legendaries = true;
-    setLegendaryPokemon();
-  }
-}
-
 Future setTeamRol(String roleName) async {
-  roleTag = allRole ? roleName : "Rol: Todos";
   roleColor = allRole ? setColor(roleName) : Colors.lime;
 }
 

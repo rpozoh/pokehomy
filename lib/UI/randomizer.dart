@@ -6,6 +6,7 @@ import 'package:pokehomy/data/generic_data.dart';
 import 'package:pokehomy/functions/generate_full_team.dart';
 import 'package:pokehomy/functions/random_team.dart';
 import 'package:pokehomy/functions/generate_no_repeat_team.dart';
+import 'package:pokehomy/functions/generate_eevee_team.dart';
 import 'package:pokehomy/functions/generate_same_rol_team.dart';
 import 'package:pokehomy/functions/generate_distinct_rol_team.dart';
 import 'package:pokehomy/functions/generate_same_type_team.dart';
@@ -87,10 +88,11 @@ class _RandomizerState extends State<Randomizer> {
     });
   }
 
-  void setEevees() {
+  Future setEevees() async {
+    setState(() => _loading = true);
+    final pokemonTeam = await generateEeveeTeam();
     setState(() {
-      _loading = true;
-      setEeveeTeam();
+      pokemonTeam;
       _loading = false;
     });
   }
@@ -125,7 +127,7 @@ class _RandomizerState extends State<Randomizer> {
                 shape: const StadiumBorder(),
               ),
               child: OutlinedButton (
-                onPressed: !eevees ? setLegends : null,
+                onPressed: setLegends,
                 style: OutlinedButton.styleFrom(backgroundColor: exColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: Text(legendaryTag,
                 style: const TextStyle(color: Colors.black)),
@@ -138,10 +140,10 @@ class _RandomizerState extends State<Randomizer> {
                 shape: const StadiumBorder(),
               ),
               child: OutlinedButton (
-                onPressed: allRole ? setEevees : null,
+                onPressed: setEevees,
                 style: OutlinedButton.styleFrom(backgroundColor: eeveeColor, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
-                child: Text(eeveeTag,
-                style: const TextStyle(color: Colors.black)),
+                child: const Text('Eevee Team',
+                style: TextStyle(color: Colors.black)),
               ),
             ),
             Tooltip (
@@ -275,7 +277,7 @@ class _RandomizerState extends State<Randomizer> {
                 shape: const StadiumBorder(),
               ),
               child: OutlinedButton (
-                onPressed: (selectRole == 'Auxiliar' || selectRole == 'Agil' || eevees) ? null : randomNoRepeat,
+                onPressed: randomNoRepeat,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Sin repetir',
                 style: TextStyle(color: Colors.black)),
@@ -288,7 +290,7 @@ class _RandomizerState extends State<Randomizer> {
                 shape: const StadiumBorder(),
               ),
               child: OutlinedButton (
-                onPressed: (allRole && !eevees) ? fullteam : null,
+                onPressed: fullteam,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Balanceado',
                 style: TextStyle(color: Colors.black)),
@@ -301,7 +303,7 @@ class _RandomizerState extends State<Randomizer> {
                 shape: const StadiumBorder(),
               ),
               child: OutlinedButton (
-                onPressed: (allRole && !eevees) ? distinctRol : null,
+                onPressed: distinctRol,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('RolA vs RolB',
                 style: TextStyle(color: Colors.black)),
@@ -314,7 +316,7 @@ class _RandomizerState extends State<Randomizer> {
                 shape: const StadiumBorder(),
               ),
               child: OutlinedButton (
-                onPressed: (allRole && !eevees) ? sameTypeTeam : null,
+                onPressed: sameTypeTeam,
                 style: OutlinedButton.styleFrom(backgroundColor: Colors.blue, side: const BorderSide(width: 3), disabledBackgroundColor: Colors.grey),
                 child: const Text('Por tipo',
                 style: TextStyle(color: Colors.black)),
